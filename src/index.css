@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+button:hover {
+  cursor: pointer;
+}
+
+/*
+Colors
+#01329C -> Primary
+#9B0100 -> Secondary
+*/
