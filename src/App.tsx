@@ -23,6 +23,7 @@ function App() {
   // reviews carousel
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" })
 
+  //@ts-ignore
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const scrollPrev = useCallback(() => {

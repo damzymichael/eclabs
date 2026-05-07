@@ -47,6 +47,7 @@ export const HeroCarousel = () => {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
   // Handle slide selection to manage button disabled states (even with looping)
+  //@ts-ignore
   const onSelect = useCallback((emblaApi) => {
     setCanScrollPrev(emblaApi.canScrollPrev())
     setCanScrollNext(emblaApi.canScrollNext())
