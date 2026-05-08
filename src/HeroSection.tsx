@@ -47,7 +47,6 @@ export const HeroCarousel = () => {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
   // Handle slide selection to manage button disabled states (even with looping)
-  //@ts-ignore
   const onSelect = useCallback((emblaApi) => {
     setCanScrollPrev(emblaApi.canScrollPrev())
     setCanScrollNext(emblaApi.canScrollNext())
@@ -62,7 +61,7 @@ export const HeroCarousel = () => {
 
   return (
     <div
-      className="relative w-full aspect-21/9 md:aspect-3/1 overflow-hidden group min-h-100"
+      className="relative w-full aspect-21/9 md:aspect-3/1 overflow-hidden group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -71,7 +70,7 @@ export const HeroCarousel = () => {
         {/* 2. Embla Flex Container */}
         <div className="flex h-full">
           {slides.map((slide) => (
-            <div key={slide.id} className="relative flex-[0_0_100%] min-w-0 h-full">
+            <div key={slide.id} className="relative flex-[0_0_100%] min-w-0">
               {/* Image Layer (Hidden on mobile) */}
               <img
                 src={slide.image}
@@ -84,7 +83,7 @@ export const HeroCarousel = () => {
                 On Desktop (md:): Adds gradient overlay on top of the image.
               */}
               <div
-                className="absolute inset-0 z-10"
+                className="absolute inset-0 z-10 "
                 style={{
                   backgroundColor: BRAND_BLUE, // Mobile solid background
                 }}
