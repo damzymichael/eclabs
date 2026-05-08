@@ -9,9 +9,9 @@ import { useState } from "react"
 import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5"
 import useEmblaCarousel from "embla-carousel-react"
 import { reviews } from "./data"
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 import { HeroCarousel } from "./HeroSection"
 import { TiThMenu } from "react-icons/ti"
+import Footer from "./components/Footer"
 
 function App() {
   // For services we offer
@@ -133,7 +133,7 @@ function App() {
 
       {/* Different types of services with icons  */}
       <section>
-        <div className="max-w-7xl mx-auto grid gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-stretch px-4 py-14">
+        <div className="max-w-7xl mx-auto grid gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-stretch px-4 py-14">
           <div className="flex flex-col items-center">
             <div className="border-10 border-[#01329C] rounded-full size-30 grid place-items-center mb-4">
               <IoIosPeople color="#01329C" size={70} />
@@ -253,32 +253,58 @@ function App() {
             <div
               className={`border-2 ${current.borderColor} rounded-xl p-8 -mt-0.5 transition-all duration-300`}
             >
-              <div className="space-y-6 text-gray-600 leading-relaxed mb-4">
-                {current.content.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-
-              <div className="">
-                {/* Tags */}
-                <div className="flex flex-wrap gap-3 mb-8">
-                  {current.content.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className={`${current.color} text-white px-5 py-2 rounded-full text-sm font-medium cursor-pointer hover:opacity-90 transition-opacity`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* CTA Button */}
-                <button
-                  className={`border-2 ${current.borderColor} ${current.textColor} px-6 py-2 rounded-full font-bold hover:${current.color} transition-all`}
+              {/* Initial Note (Pre-Heading) */}
+              {current.content.preHeading && (
+                <p
+                  className="text-lg font-semibold mb-4 italic"
+                  style={{ color: current.textColor.replace("text-", "") }}
                 >
-                  {current.content.cta}
-                </button>
-              </div>
+                  {current.content.preHeading}
+                </p>
+              )}
+
+              {/* Structured List */}
+              <ul className="space-y-4 mb-8">
+                {current.content.listItems.map((item, i) => (
+                  <li key={i} className="flex flex-col">
+                    <div className="flex items-start gap-2">
+                      <span className={`${current.textColor} font-bold text-lg leading-none`}>
+                        •
+                      </span>
+                      <span className="font-medium text-gray-800">{item.label}</span>
+                    </div>
+
+                    {/* Sub-items (for DNA Testing style) */}
+                    {item.subItems && (
+                      <ul className="ml-8 mt-2 space-y-1 border-l-2 pl-4 border-gray-100">
+                        {item.subItems.map((sub, j) => (
+                          <li key={j} className="text-gray-600 text-sm flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                            {sub}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Important Footer Note */}
+              {current.content.footerNote && (
+                <div
+                  className="bg-gray-50 p-4 rounded-lg border-l-4 mb-8 text-sm text-gray-700 italic"
+                  style={{ borderColor: current.borderColor.replace("border-", "") }}
+                >
+                  {current.content.footerNote}
+                </div>
+              )}
+
+              {/* CTA Button */}
+              <button
+                className={`border-2 ${current.borderColor} ${current.textColor} px-8 py-3 rounded-full font-bold hover:${current.color} transition-all`}
+              >
+                {current.content.cta}
+              </button>
             </div>
           </div>
         </div>
@@ -328,111 +354,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="bg-[#222222] text-white font-sans">
-        {/* Top Section: Main Content */}
-        <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Column 1: About */}
-          <div>
-            <h3 className="text-[#1d5fb9] font-bold mb-6">About AlphaBiolabs</h3>
-            <p className="text-sm leading-relaxed mb-8">
-              Established in August 2004, AlphaBiolabs is an award winning DNA Paternity, Drug and
-              Alcohol Testing Laboratory. We provide testing to the legal profession, corporations
-              and members of the public.
-            </p>
-          </div>
-
-          {/* Column 2: Blog Posts */}
-          <div>
-            <h3 className="text-[#1d5fb9] font-bold mb-6">From the blog</h3>
-            <ul className="space-y-4 text-sm">
-              {[
-                "Alcohol misuse in the UK: What the latest evidence means for family proceedings",
-                "Coeliac Awareness Month: How genetic testing can support early diagnosis",
-                "Beyond the cut-off: How AlphaBiolabs interprets drug and alcohol test results for family cases",
-                "Key changes to UKVI guidance in 2026: what they mean for immigration DNA testing",
-                "Drug testing in family law: understanding drug groups, classifications and misuse",
-              ].map((post, i) => (
-                <li key={i} className="flex items-start gap-2 group cursor-pointer">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white shrink-0" />
-                  <span className="group-hover:underline">{post}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Contact */}
-          <div>
-            <h3 className="text-[#1d5fb9] font-bold mb-6">Contact us</h3>
-            <div className="text-sm space-y-1 mb-6">
-              <p>14 Webster Court</p>
-              <p>Carina Park</p>
-              <p>Warrington</p>
-              <p>Cheshire</p>
-              <p>WA5 8WD</p>
-              <p>United Kingdom</p>
-            </div>
-            <div className="text-sm space-y-2">
-              <p>T: 0333 600 1300</p>
-              <p>Int: (+44)1925 255450</p>
-              <p>
-                E: <span className="hover:underline cursor-pointer">info@alphabiolabs.com</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Middle Section: Utility Links */}
-        <div className="bg-[#333333] border-y border-gray-700">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <ul className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-[13px] font-medium">
-              {[
-                "Cookie Policy",
-                "Terms & Conditions",
-                "Privacy",
-                "Complaints Policy",
-                "Carbon Reduction Plan",
-                "Environmental Policy",
-                "Quote Forms",
-                "AlphaBiolabs USA",
-                "AlphaBiolabs Ireland",
-                "Discount Codes",
-              ].map((link) => (
-                <li key={link} className="hover:underline cursor-pointer">
-                  {link}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Section: Copyright & Social */}
-        <div className="bg-[#1a1a1a]">
-          <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs text-gray-400">
-              © 2026 AlphaBiolabs Ltd - 14 Webster Court, Carina Park, Warrington WA5 8WD
-            </p>
-
-            <div className="flex gap-6">
-              <FaFacebookF
-                className="text-gray-400 hover:text-white cursor-pointer transition-colors"
-                size={20}
-              />
-              <FaTwitter
-                className="text-gray-400 hover:text-white cursor-pointer transition-colors"
-                size={20}
-              />
-              <FaLinkedinIn
-                className="text-gray-400 hover:text-white cursor-pointer transition-colors"
-                size={20}
-              />
-              <FaInstagram
-                className="text-gray-400 hover:text-white cursor-pointer transition-colors"
-                size={20}
-              />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

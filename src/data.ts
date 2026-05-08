@@ -6,19 +6,16 @@ export const tabs = [
     borderColor: "border-[#1d5fb9]",
     textColor: "text-[#1d5fb9]",
     content: {
-      paragraphs: [
-        // "We are the UK's best and most-trusted laboratory, providing home DNA, Drug, Alcohol and Health testing services.",
-        // "Whether you need a paternity test for your own peace of mind, or simply want to check up on your health, we have a range of tests available to suit your needs. We also offer legally admissible DNA, Drug and Alcohol testing for private legal matters.",
-        // "Better still, all our tests are performed in the UK at our state-of-the-art laboratory, so your samples will never be sent abroad.",
+      preHeading: "",
+      listItems: [
+        { label: "Microbiology" },
+        { label: "Hematology" },
+        { label: "Chemistry" },
+        { label: "Immunology" },
+        { label: "Histopathology" },
+        { label: "Molecular Diagnostics" },
       ],
-      tags: [
-        "Microbiology",
-        "Hermatology",
-        "Chemistry",
-        "Immunology",
-        "Hispathology",
-        "Molecular Diagnostics",
-      ],
+      footerNote: "",
       cta: "Book appointment",
     },
   },
@@ -29,27 +26,36 @@ export const tabs = [
     borderColor: "border-[#b356a1]",
     textColor: "text-[#b356a1]",
     content: {
-      paragraphs: [],
-      tags: ["Paternity testing", "Maternity Testing", "Prenatal screening"],
+      preHeading: "Peace of Mind", // [cite: 8]
+      listItems: [
+        { label: "Paternity Testing (Legal & Peace of Mind)" }, // [cite: 9]
+        { label: "Maternity Testing" }, // [cite: 9]
+        {
+          label: "Prenatal Screening", //
+          subItems: ["Paternity", "Sex determination", "Baby gender test", "Genetic Disease test"], //
+        },
+      ],
+      footerNote: "* All our Prenatal DNA tests are non-invasive. We use maternal blood.", // [cite: 14]
       cta: "Get a Quote",
     },
   },
   {
     id: 2,
-    label: "General Health screening",
+    label: "General Health Screening",
     color: "bg-[#e56000]",
     borderColor: "border-[#e56000]",
     textColor: "text-[#e56000]",
     content: {
-      paragraphs: [],
-      tags: [
-        "Diabetes and Hypertension",
-        "Kidney, Heart and Liver",
-        "Cancer screening",
-        "Pre-employment screening",
-        "Pre-school screening",
-        "Travel screening",
+      preHeading: "",
+      listItems: [
+        { label: "Diabetes and Hypertension" }, // [cite: 17]
+        { label: "Kidney, Heart and Liver" }, // [cite: 17]
+        { label: "Cancer Screening" }, // [cite: 18]
+        { label: "Pre-employment Screening" }, // [cite: 18]
+        { label: "Pre-school Screening" }, // [cite: 18]
+        { label: "Travel Screening" }, // [cite: 19]
       ],
+      footerNote: "",
       cta: "Get a Quote",
     },
   },
@@ -60,29 +66,37 @@ export const tabs = [
     borderColor: "border-[#0094a8]",
     textColor: "text-[#0094a8]",
     content: {
-      paragraphs: ["Designed for workplaces, schools and homes. For legal and peace of mind"],
-      tags: [
-        "Cannabis",
-        "Amohetamine",
-        "Cocaine",
-        "Benzodizepam",
-        "Methadone",
-        "Opiate (Heroine)",
-        "Tramadol",
-        "Bupremorphine",
+      preHeading: "Designed for workplace, schools and home. For legal and peace of mind.", // [cite: 23]
+      listItems: [
+        { label: "Cannabis" }, // [cite: 25]
+        { label: "Amphetamine" }, // [cite: 27]
+        { label: "Cocaine" }, // [cite: 28]
+        { label: "Benzodiazepine" }, // [cite: 29]
+        { label: "Methadone" }, // [cite: 29]
+        { label: "Opiate (Heroin)" }, // [cite: 30]
+        { label: "Tramadol" }, // [cite: 31]
+        { label: "Buprenorphine" }, // [cite: 32]
       ],
+      footerNote: "We use Urine, Saliva, or Hair depending on the purpose.", // [cite: 34, 37]
       cta: "Book appointment",
     },
   },
   {
     id: 4,
-    label: "Sexually Transmitted Infection test ",
+    label: "Sexually Transmitted Infection test",
     color: "bg-[#9B0100]",
     borderColor: "border-[#9B0100]",
     textColor: "text-[#9B0100]",
     content: {
-      paragraphs: ["Designed for workplaces, schools and homes. For legal and peace of mind"],
-      tags: ["HIV", "Gonorrhea", "Syphillis", "Chlamydia", "Herpes", "OHepatitis B and C"],
+      preHeading: "",
+      listItems: [
+        { label: "HIV" }, // [cite: 40]
+        { label: "Gonorrhea" }, // [cite: 45]
+        { label: "Chlamydia" }, // [cite: 46]
+        { label: "Herpes" }, // [cite: 46]
+        { label: "Hepatitis B and C" }, // [cite: 47]
+      ],
+      footerNote: "Strictly Confidential Reports.", // [cite: 55]
       cta: "Book appointment",
     },
   },
