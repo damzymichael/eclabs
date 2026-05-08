@@ -42,7 +42,7 @@ function Footer() {
           <h3 className="text-[#1d5fb9] font-bold mb-6">Contact us</h3>
           <div className="flex flex-wrap gap-4">
             <div>
-              <div className="text-sm space-y-1 mb-6">
+              <div className="text-sm space-y-1 mb-4">
                 <p className="font-semibold text-base">Head office – Benin-City</p>
                 <p>2nd CONOIL Filling Station</p>
                 <p>Adjacent Winners Chapel</p>
@@ -60,7 +60,7 @@ function Footer() {
             </div>
 
             <div className="max-w-54">
-              <div className="text-sm space-y-1 mb-6">
+              <div className="text-sm space-y-1 mb-4">
                 <p className="font-semibold text-base">Edo Central Branch (Irrua)</p>
                 <p>Km 87, Benin-Auchi Road</p>
                 <p>Opposite Irrua Specialist Teaching Hospital</p>
@@ -77,7 +77,7 @@ function Footer() {
             </div>
 
             <div>
-              <div className="text-sm space-y-1 mb-6">
+              <div className="text-sm space-y-1 mb-4">
                 <p className="font-semibold text-base">Edo North Branch (Auchi)</p>
                 <p>Medical Plaza, No. 37,</p>
                 <p> Igbei Road, Auchi</p>
