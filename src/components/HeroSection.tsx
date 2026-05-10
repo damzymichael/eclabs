@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react"
 import useEmblaCarousel from "embla-carousel-react"
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
-// Specific brand blue hex
+
 const BRAND_BLUE = "#01329C"
 
 const slides = [
@@ -9,7 +9,7 @@ const slides = [
     id: 1,
     title: "DNA, Drug, Alcohol & Health Testing",
     body: ["The UK’s No.1 testing laboratory"],
-    image: "path-to-microscope.jpg", // image_8.png
+    image: "path-to-microscope.jpg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const slides = [
       "Expertly-trained to collect hair, nail, breath, urine, oral fluid, blood & fingerprint samples",
       "Chain of custody followed for legal and workplace sample collections",
     ],
-    image: "path-to-swab.jpg", // image_9.png
+    image: "path-to-swab.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const slides = [
       "All tests performed at our state-of-the-art UK laboratory",
       "Accurate and reliable",
     ],
-    image: "path-to-pipette.jpg", // image_10.png
+    image: "path-to-pipette.jpg",
   },
 ]
 
@@ -83,12 +83,7 @@ export const HeroCarousel = () => {
                 On Mobile: Uses solid BRAND_BLUE.
                 On Desktop (md:): Adds gradient overlay on top of the image.
               */}
-              <div
-                className="absolute inset-0 z-10 "
-                style={{
-                  backgroundColor: BRAND_BLUE, // Mobile solid background
-                }}
-              >
+              <div className="absolute inset-0 z-10 " style={{ backgroundColor: BRAND_BLUE }}>
                 {/* Desktop-only Gradient Overlay */}
                 <div className="hidden md:block absolute inset-0 bg-linear-to-r from-[#01329C] via-[#01329C]/80 to-transparent" />
               </div>

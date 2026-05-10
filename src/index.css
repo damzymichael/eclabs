@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  /* This maps 'font-sans' to Inter and provides a fallback */
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-inter);
+  }
+}
+
 button:hover {
   cursor: pointer;
 }

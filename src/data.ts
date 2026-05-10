@@ -102,6 +102,29 @@ export const tabs = [
   },
 ]
 
+export const steps = [
+  {
+    number: 1,
+    title: "REQUEST",
+    description: "Request a quote or book appointment",
+  },
+  {
+    number: 2,
+    title: "PLAN",
+    description: "Choose home or lab visit",
+  },
+  {
+    number: 3,
+    title: "COLLECTION",
+    description: "Sample is collected",
+  },
+  {
+    number: 4,
+    title: "RESULTS",
+    description: "Get results and support",
+  },
+]
+
 export const reviews = [
   {
     id: 1,
