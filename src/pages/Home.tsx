@@ -58,7 +58,7 @@ function Home() {
 
       {/* Different types of services with icons  */}
       <section>
-        <div className="max-w-7xl mx-auto grid gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-stretch px-4 py-14">
+        <div className="max-w-7xl mx-auto grid gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center px-4 pt-35 pb-26">
           <div className="flex flex-col items-center">
             <div className="border-10 border-[#01329C] rounded-full size-30 grid place-items-center mb-4">
               <IoIosPeople color="#01329C" size={70} />
@@ -84,7 +84,7 @@ function Home() {
             </p>
             <Link
               to="/book-appointment"
-              className="text-white bg-[#b855ac] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all"
+              className="text-white bg-[#b855ac] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all mt-auto"
             >
               Request Quote
             </Link>
@@ -99,7 +99,7 @@ function Home() {
             </p>
             <Link
               to="/book-appointment"
-              className="text-white bg-[#e65400] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all"
+              className="text-white bg-[#e65400] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all mt-auto"
             >
               Request Quote
             </Link>
@@ -114,7 +114,7 @@ function Home() {
             </p>
             <Link
               to="/book-appointment"
-              className="text-white bg-[#0097A9] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all"
+              className="text-white bg-[#0097A9] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all mt-auto"
             >
               Book appointment
             </Link>
@@ -123,10 +123,10 @@ function Home() {
       </section>
 
       {/* The expert authority you can trust  */}
-      <section>
-        <header className="bg-[#01329C] text-white px-4 py-3 mb-2">
-          <h3 className="text-center text-2xl">The expert authority you can trust</h3>
-        </header>
+      <section className="py-26">
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold">
+          The expert authority you can trust
+        </h3>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-5 items-start px-4 py-7 md:py-15">
           <article className="w-full md:w-1/2 mx-auto md:text-center">
             <header className="mb-3">
@@ -160,9 +160,7 @@ function Home() {
 
       {/* What we offer  */}
       <section>
-        <header className="bg-[#01329C] text-white px-4 py-3 mb-5">
-          <h3 className="text-center text-2xl">Our Services</h3>
-        </header>
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold">Our Services</h3>
         <div className="max-w-7xl mx-auto px-4 py-7 md:py-10">
           <div className="">
             {/* Tab Navigation */}
@@ -278,10 +276,10 @@ function Home() {
       </section>
 
       {/* Testimonials  */}
-      <section>
-        <header className="bg-[#01329C] text-white px-4 py-3 mb-5">
-          <h3 className="text-center text-2xl">Real reviews from real people</h3>
-        </header>
+      <section className="py-10">
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold mb-16">
+          Real reviews from real people
+        </h3>
         <div className="max-w-7xl mx-auto px-4 py-7 md:py-10 flex items-center mb-10">
           <button onClick={scrollPrev}>
             <IoChevronBackCircleOutline size={37} />
