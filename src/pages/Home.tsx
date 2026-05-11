@@ -57,8 +57,11 @@ function Home() {
       <HeroCarousel />
 
       {/* Different types of services with icons  */}
-      <section>
-        <div className="max-w-7xl mx-auto grid gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center px-4 pt-35 pb-26">
+      <section className="pt-18 ">
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold pb-20">
+          WHO WE SERVE
+        </h3>
+        <div className="max-w-7xl mx-auto grid gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center px-4 pb-26">
           <div className="flex flex-col items-center">
             <div className="border-10 border-[#01329C] rounded-full size-30 grid place-items-center mb-4">
               <IoIosPeople color="#01329C" size={70} />
@@ -123,11 +126,11 @@ function Home() {
       </section>
 
       {/* The expert authority you can trust  */}
-      <section className="py-26">
+      <section className="py-26 bg-[#BFD3FF]">
         <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold">
           The expert authority you can trust
         </h3>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-5 items-start px-4 py-7 md:py-15">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-5 items-start px-4 pt-7 md:pt-10">
           <article className="w-full md:w-1/2 mx-auto md:text-center">
             <header className="mb-3">
               <h3 className="text-[#01329C] font-bold text-2xl">Why Choose EC Laboratory</h3>
@@ -158,8 +161,8 @@ function Home() {
         </div>
       </section>
 
-      {/* What we offer  */}
-      <section>
+      {/* Our Services  */}
+      <section className="py-20">
         <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold">Our Services</h3>
         <div className="max-w-7xl mx-auto px-4 py-7 md:py-10">
           <div className="">
