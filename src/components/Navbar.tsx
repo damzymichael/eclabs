@@ -2,6 +2,7 @@ import { useState } from "react"
 import { TiThMenu } from "react-icons/ti"
 import { FaPhoneAlt, FaChevronDown } from "react-icons/fa"
 import { IoMail } from "react-icons/io5"
+import { Link } from "react-router-dom"
 
 const categories = [
   {
@@ -101,9 +102,12 @@ function Navbar() {
               </li>
 
               <li>
-                <a href="" className="bg-[#9B0100] px-5 py-3 rounded-full text-white">
-                  Contact us
-                </a>
+                <Link
+                  to="/book-appointment"
+                  className="bg-[#9B0100] px-5 py-3 rounded-full text-white"
+                >
+                  Book appointment
+                </Link>
               </li>
             </ul>
           </nav>

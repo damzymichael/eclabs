@@ -9,7 +9,7 @@ import { useState } from "react"
 import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5"
 import useEmblaCarousel from "embla-carousel-react"
 import { reviews } from "../data"
-import { HeroCarousel } from "../components/HeroSection"
+//import { HeroCarousel } from "../components/HeroSection"
 import { Link } from "react-router-dom"
 
 function Home() {
@@ -54,7 +54,39 @@ function Home() {
   return (
     <div>
       {/* Hero section with swiper */}
-      <HeroCarousel />
+      {/* <HeroCarousel /> */}
+
+      <section className="relative w-full min-h-75 md:h-100 flex items-center bg-[#01329C]">
+        <img
+          src="/microscope-lab.png"
+          alt="Laboratory Microscope"
+          className="hidden md:block absolute inset-0 h-full w-full object-cover object-right"
+        />
+
+        {/* 2. Gradient Overlay: Only active on md+ screens */}
+        <div
+          className="absolute inset-0 md:bg-linear-to-r md:from-[#01329C] md:via-[#01329C]/80 md:to-transparent"
+          /* Inline style as a backup for precise control over the fade point */
+          style={{
+            background: "linear-gradient(90deg, #01329C 0%, #01329C 45%, rgba(1, 50, 156, 0) 100%)",
+          }}
+        />
+
+        {/* 3. Content: Centered on mobile, left-aligned on desktop */}
+        <div className="relative z-10 w-full px-6 md:px-12 text-left text-white max-w-7xl mx-auto">
+          <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-2xl">
+            Accurate Laboratory Testing Made Simple
+          </h1>
+          <p className="mt-4 text-lg md:text-xl opacity-90 max-w-150">
+            For individuals, businesses, and organizations. Book tests, request quotes, and access
+            professional support with ease.
+          </p>
+
+          <div>
+            <Link to="/book-appointment"></Link>
+          </div>
+        </div>
+      </section>
 
       {/* Different types of services with icons  */}
       <section className="pt-18 ">
@@ -127,7 +159,7 @@ function Home() {
 
       {/* The expert authority you can trust  */}
       <section className="py-26 bg-[#BFD3FF]">
-        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold">
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold uppercase">
           The expert authority you can trust
         </h3>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-5 items-start px-4 pt-7 md:pt-10">
@@ -163,7 +195,9 @@ function Home() {
 
       {/* Our Services  */}
       <section className="py-20">
-        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold">Our Services</h3>
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold uppercase">
+          Our Services
+        </h3>
         <div className="max-w-7xl mx-auto px-4 py-7 md:py-10">
           <div className="">
             {/* Tab Navigation */}
@@ -251,8 +285,7 @@ function Home() {
 
       <section className="bg-[#002B9A] py-16 px-4 font-sans mb-10">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Main Title */}
-          <h2 className="text-white text-4xl md:text-5xl font-bold mb-16 tracking-wide">
+          <h2 className="text-white text-4xl md:text-5xl font-bold mb-24 tracking-wide">
             HOW IT WORKS
           </h2>
 
@@ -280,7 +313,7 @@ function Home() {
 
       {/* Testimonials  */}
       <section className="py-10">
-        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold mb-16">
+        <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold mb-16 uppercase">
           Real reviews from real people
         </h3>
         <div className="max-w-7xl mx-auto px-4 py-7 md:py-10 flex items-center mb-10">

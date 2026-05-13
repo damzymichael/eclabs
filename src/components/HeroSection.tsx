@@ -62,7 +62,7 @@ export const HeroCarousel = () => {
 
   return (
     <div
-      className="relative w-full aspect-21/9 md:aspect-3/1 overflow-hidden group"
+      className="relative w-full aspect-21/9 md:aspect-3/1 overflow-hidden group max-h-125"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
