@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 function Footer() {
   return (
@@ -9,9 +10,10 @@ function Footer() {
         <div className="max-w-70">
           <h3 className="text-[#1d5fb9] font-bold mb-6">About EC Labs</h3>
           <p className="text-sm leading-relaxed mb-8">
-            Established in August 2004, AlphaBiolabs is an award winning DNA Paternity, Drug and
-            Alcohol Testing Laboratory. We provide testing to the legal profession, corporations and
-            members of the public.
+            EC-Lab (Express Clinical Laboratory) Ltd is a leading provider of world-class diagnostic
+            and pathology services in Nigeria, committed to delivering accurate, timely, and
+            reliable laboratory results that support better healthcare decisions and improved
+            patient outcomes.
           </p>
         </div>
 
@@ -20,11 +22,11 @@ function Footer() {
           <h3 className="text-[#1d5fb9] font-bold mb-6">Quick links</h3>
           <ul className="space-y-4 text-sm">
             <li className="">
-              <a href="">Home</a>
+              <Link to="/">Home</Link>
             </li>
 
             <li className="">
-              <a href="">About Us</a>
+              <Link to="/about-us">About Us</Link>
             </li>
 
             <li className="">

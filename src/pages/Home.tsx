@@ -1,92 +1,131 @@
-import { useCallback, useEffect } from "react"
-import { FaBalanceScale, FaBuilding, FaCheckCircle } from "react-icons/fa"
-import { IoStarSharp } from "react-icons/io5"
+import { FaBalanceScale, FaBuilding } from "react-icons/fa"
 import { IoIosPeople } from "react-icons/io"
 import { PiHandshakeFill } from "react-icons/pi"
 import { SiTicktick } from "react-icons/si"
 import { steps, tabs } from "../data"
 import { useState } from "react"
-import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5"
-import useEmblaCarousel from "embla-carousel-react"
-import { reviews } from "../data"
-//import { HeroCarousel } from "../components/HeroSection"
+// import { HeroCarousel } from "../components/HeroSection"
 import { Link } from "react-router-dom"
+import Reviews from "../components/Reviews"
+import {
+  FaCircleCheck,
+  FaBoltLightning,
+  FaHouseMedical,
+  FaShieldHalved,
+  FaUserDoctor,
+} from "react-icons/fa6"
+// Embla carousel
+import useEmblaCarousel from "embla-carousel-react"
+import Autoplay from "embla-carousel-autoplay"
 
 function Home() {
   // For services we offer
   const [activeTab, setActiveTab] = useState(0)
   const current = tabs[activeTab]
 
-  // reviews carousel
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" })
+  const benefits = [
+    { text: "Certified Laboratory", icon: FaCircleCheck },
+    { text: "Fast Turnaround", icon: FaBoltLightning },
+    { text: "Home Sample Collection", icon: FaHouseMedical },
+    { text: "Confidential Results", icon: FaShieldHalved },
+    { text: "Professional Support", icon: FaUserDoctor },
+  ]
 
-  // const [selectedIndex, setSelectedIndex] = useState(0)
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
-  }, [emblaApi])
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-
-    const onSelect = () => {
-      // setSelectedIndex(emblaApi.selectedScrollSnap())
-    }
-
-    onSelect()
-    emblaApi.on("select", onSelect)
-  }, [emblaApi])
-
-  // Star Component using React Icons
-  const TrustStars = () => (
-    <div className="flex gap-0.5">
-      {[...Array(5)].map((_, i) => (
-        <div key={i} className="bg-[#00b67a] p-0.5">
-          <IoStarSharp className="text-white text-[12px]" />
-        </div>
-      ))}
-    </div>
-  )
+  // Embla carousel
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3500 })])
   return (
     <div>
       {/* Hero section with swiper */}
       {/* <HeroCarousel /> */}
 
-      <section className="relative w-full min-h-75 md:h-100 flex items-center bg-[#01329C]">
-        <img
-          src="/microscope-lab.png"
-          alt="Laboratory Microscope"
-          className="hidden md:block absolute inset-0 h-full w-full object-cover object-right"
-        />
+      <div className="overflow-hidden w-full" ref={emblaRef}>
+        {/* flex container  */}
+        <div className="flex">
+          <section className="relative flex-[0_0_100%] min-h-75 md:min-h-150 flex items-center bg-[#01329C] py-20">
+            <img
+              src="/lab-guy-testing.png"
+              alt="Laboratory Microscope"
+              className="hidden md:block absolute inset-0 h-full w-full object-cover object-right"
+            />
+            {/* 2. Gradient Overlay: Only active on md+ screens */}
+            <div
+              className="absolute inset-0 md:bg-linear-to-r md:from-[#01329C] md:via-[#01329C]/80 md:to-transparent"
+              /* Inline style as a backup for precise control over the fade point */
+              style={{
+                background:
+                  "linear-gradient(90deg, #01329C 0%, #01329C 45%, rgba(1, 50, 156, 0) 100%)",
+              }}
+            />
 
-        {/* 2. Gradient Overlay: Only active on md+ screens */}
-        <div
-          className="absolute inset-0 md:bg-linear-to-r md:from-[#01329C] md:via-[#01329C]/80 md:to-transparent"
-          /* Inline style as a backup for precise control over the fade point */
-          style={{
-            background: "linear-gradient(90deg, #01329C 0%, #01329C 45%, rgba(1, 50, 156, 0) 100%)",
-          }}
-        />
+            {/* 3. Content: Centered on mobile, left-aligned on desktop */}
+            <div className="relative z-10 w-full px-6 md:px-12 text-left text-white max-w-7xl mx-auto">
+              <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-2xl">
+                Accurate Laboratory Testing Made Simple
+              </h1>
+              <p className="mt-4 text-lg md:text-xl opacity-90 max-w-150 mb-10">
+                For individuals, businesses, and organizations. Book tests, request quotes, and
+                access professional support with ease.
+              </p>
 
-        {/* 3. Content: Centered on mobile, left-aligned on desktop */}
-        <div className="relative z-10 w-full px-6 md:px-12 text-left text-white max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-2xl">
-            Accurate Laboratory Testing Made Simple
-          </h1>
-          <p className="mt-4 text-lg md:text-xl opacity-90 max-w-150">
-            For individuals, businesses, and organizations. Book tests, request quotes, and access
-            professional support with ease.
-          </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="#"
+                  className="bg-white text-[#01329C] text-lg py-3 px-5 rounded-full hover:opacity-85 hover:scale-x-105 transition-all font-bold text-center"
+                >
+                  Request a quote
+                </Link>
+                <Link
+                  to="/book-appointment"
+                  className="bg-[#9B0100] text-lg px-5 py-3 rounded-full hover:opacity-85 hover:scale-x-105 transition-all text-white font-bold text-center"
+                >
+                  Book appointment
+                </Link>
+              </div>
+            </div>
+          </section>
+          <section className="relative flex-[0_0_100%] min-h-75 md:min-h-150 flex items-center bg-[#01329C] py-20">
+            <img
+              src="/lab-attendants-working.png"
+              alt="Laboratory Microscope"
+              className="hidden md:block absolute scale-x-[-1] inset-0 h-full w-full object-cover object-right"
+            />
 
-          <div>
-            <Link to="/book-appointment"></Link>
-          </div>
+            {/* 2. Gradient Overlay: Only active on md+ screens */}
+            <div
+              className="absolute inset-0 scale-x-[-1]  md:bg-linear-to-r md:from-[#01329C] md:via-[#01329C]/80 md:to-transparent"
+              style={{
+                background:
+                  "linear-gradient(90deg, #01329C 0%, #01329C 45%, rgba(1, 50, 156, 0) 100%)",
+              }}
+            />
+
+            {/* 3. Content: Centered on mobile, left-aligned on desktop */}
+            <div className="relative z-10 px-6 md:px-12 text-left text-white md:ml-auto w-max">
+              <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-[340px] md:max-w-[600px] mb-8">
+                Your Trusted Partner in Medical Excellence
+              </h1>
+
+              {/* Icon list */}
+              <ul className="space-y-4 max-w-150">
+                {benefits.map((benefit, index) => {
+                  const IconComponent = benefit.icon
+                  return (
+                    <li
+                      key={index}
+                      className="flex items-center gap-3 text-lg md:text-xl font-medium"
+                    >
+                      <div className="flex items-center justify-center w-6 h-6 text-[#9B0100] bg-white rounded-full shrink-0">
+                        <IconComponent className="w-4 h-4" />
+                      </div>
+                      <span className="opacity-95">{benefit.text}</span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       {/* Different types of services with icons  */}
       <section className="pt-18 ">
@@ -316,43 +355,7 @@ function Home() {
         <h3 className="text-center text-[#01329C] text-4xl md:text-5xl font-bold mb-16 uppercase">
           Real reviews from real people
         </h3>
-        <div className="max-w-7xl mx-auto px-4 py-7 md:py-10 flex items-center mb-10">
-          <button onClick={scrollPrev}>
-            <IoChevronBackCircleOutline size={37} />
-          </button>
-          <div ref={emblaRef} className="overflow-hidden mx-2">
-            <div className="flex min-w-0 flex-[0_0_100%] lg:flex-[0_0_25%] transition-transform duration-500 ease-out gap-4">
-              {reviews.map((review) => (
-                <div
-                  key={review.id}
-                  className="min-w-full md:min-w-[calc(25%-12px)] bg-[#f5f5f5] p-5 flex flex-col h-64"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <TrustStars />
-                    <div className="flex items-center text-[#696a6a] text-[13px] font-medium">
-                      <FaCheckCircle className="mr-1 text-[#696a6a]" />
-                      Verified
-                    </div>
-                  </div>
-
-                  <h3 className="font-bold text-[16px] mb-2 truncate">{review.title}</h3>
-                  <p className="text-[14px] line-clamp-5 mb-auto text-[#191919] leading-snug">
-                    {review.body}
-                  </p>
-
-                  <div className="mt-4 text-[13px] font-bold">
-                    {review.author}
-                    {review.author != "" && ","}{" "}
-                    <span className="font-normal text-[#696a6a]">{review.date}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <button onClick={scrollNext}>
-            <IoChevronForwardCircleOutline size={37} />
-          </button>
-        </div>
+        <Reviews />
       </section>
 
       <section

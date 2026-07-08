@@ -85,11 +85,11 @@ function Navbar() {
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8 text-lg font-semibold text-[#808080]">
               <li>
-                <a href="">Home</a>
+                <Link to="/">Home</Link>
               </li>
 
               <li>
-                <a href="">About us</a>
+                <Link to="/about-us">About us</Link>
               </li>
 
               <li
@@ -156,11 +156,11 @@ function Navbar() {
         <nav className="md:hidden bg-white w-full fixed left-0 top-24 z-10">
           <ul className="flex flex-col font-semibold text-lg text-[#808080] px-4 pb-30">
             <li className="border-b border-t py-6 flex items-center justify-between">
-              <a href="">Home</a>
+              <Link to="/">Home</Link>
             </li>
 
             <li className="border-b py-6 flex items-center justify-between">
-              <a href="">About us</a>
+              <Link to="/about-us">About us</Link>
             </li>
 
             <li className="border-b py-6 flex items-center justify-between">

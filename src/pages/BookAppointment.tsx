@@ -1,4 +1,5 @@
 import { BsFillInfoCircleFill } from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 function BookAppointment() {
   return (
@@ -7,9 +8,9 @@ function BookAppointment() {
       <nav className="bg-gray-50 py-3 px-6 md:px-12 lg:px-24">
         <ol className="flex items-center space-x-2 text-sm text-gray-400">
           <li>
-            <a href="#" className="hover:underline text-gray-500">
+            <Link to="/" className="hover:underline text-gray-500">
               Home
-            </a>
+            </Link>
           </li>
           <li>»</li>
           <li>Request Quote</li>
