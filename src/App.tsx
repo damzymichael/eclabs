@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import ScrollToTop from "./components/ScrollToTop"
 import AboutUs from "./pages/AboutUs"
+import DiagnosticTests from "./pages/services/DiagnosticTests"
 
 const MainLayout = () => {
   return (
@@ -26,6 +27,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="book-appointment" element={<BookAppointment />} />
+            <Route path="services">
+              <Route path="diagnostic-tests" element={<DiagnosticTests />} />
+            </Route>
           </Route>
         </Routes>
       </div>

@@ -6,7 +6,8 @@ import { Link } from "react-router-dom"
 
 const categories = [
   {
-    title: "Clinical Pathology",
+    title: "Diagnostic tests",
+    link: "/services/diagnostic-tests",
     links: [
       "Microbiology",
       "Hematology",
@@ -18,17 +19,19 @@ const categories = [
   },
   {
     title: "DNA Testing",
+    link: "#",
     links: [
       "Paternity Testing",
       "Maternity Testing",
       "Prenatal Paternity",
-      "Sex Determinations",
       "Baby Gender Test",
       "Genetic Disease Test",
+      "Immigration testing",
     ],
   },
   {
     title: "General Health Screening",
+    link: "#",
     links: [
       "Diabetes and Hypertension",
       "Kidney, Heart and Liver",
@@ -36,10 +39,12 @@ const categories = [
       "Pre-employment Screening",
       "Pre-School Screening",
       "Travel Screening",
+      "Fertility and Libido test",
     ],
   },
   {
     title: "Drug & STI Testing",
+    link: "#",
     links: [
       "Workplace & School Drug Testing",
       "Urine, Saliva & Hair Analysis",
@@ -120,7 +125,12 @@ function Navbar() {
           className="w-full left-0 mt-0 bg-white py-8 px-6 md:px-12 lg:px-24 border-t-4 border-[#01329C] shadow-2xl fixed top-26"
         >
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="ml-6 lg:ml-8">
+              <a className="text-white bg-[#01329C] py-3 px-5 rounded-full font-medium cursor-pointer hover:opacity-85 hover:scale-x-105 transition-all">
+                Download full test menu
+              </a>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
               {categories.map((category, index) => (
                 <div
                   key={index}
@@ -129,9 +139,12 @@ function Navbar() {
                     ${index % 2 !== 0 ? "sm:border-l sm:border-dotted sm:border-gray-400 lg:border-l" : ""}
                   `}
                 >
-                  <h3 className="text-[#01329C] font-bold text-lg mb-2 cursor-pointer hover:underline">
+                  <Link
+                    to={category.link}
+                    className="text-[#01329C] font-bold text-lg mb-2 cursor-pointer hover:underline"
+                  >
                     {category.title}
-                  </h3>
+                  </Link>
 
                   <ul className="space-y-3">
                     {category.links.map((link, linkIndex) => (

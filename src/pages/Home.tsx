@@ -1,43 +1,34 @@
-import { FaBalanceScale, FaBuilding } from "react-icons/fa"
+import { FaBuilding } from "react-icons/fa"
 import { IoIosPeople } from "react-icons/io"
 import { PiHandshakeFill } from "react-icons/pi"
 import { SiTicktick } from "react-icons/si"
 import { steps, tabs } from "../data"
 import { useState } from "react"
-// import { HeroCarousel } from "../components/HeroSection"
 import { Link } from "react-router-dom"
 import Reviews from "../components/Reviews"
-import {
-  FaCircleCheck,
-  FaBoltLightning,
-  FaHouseMedical,
-  FaShieldHalved,
-  FaUserDoctor,
-} from "react-icons/fa6"
-// Embla carousel
+import { FaBoltLightning, FaHouseMedical, FaShieldHalved, FaUserDoctor } from "react-icons/fa6"
+import { MdOutlineHealthAndSafety } from "react-icons/md"
 import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
 
+// TODO: Modal after the speaking to a professional button
 function Home() {
   // For services we offer
   const [activeTab, setActiveTab] = useState(0)
   const current = tabs[activeTab]
 
   const benefits = [
-    { text: "Certified Laboratory", icon: FaCircleCheck },
+    // { text: "Certified Laboratory", icon: FaCircleCheck },
     { text: "Fast Turnaround", icon: FaBoltLightning },
     { text: "Home Sample Collection", icon: FaHouseMedical },
     { text: "Confidential Results", icon: FaShieldHalved },
-    { text: "Professional Support", icon: FaUserDoctor },
+    { text: "Free medical consult", icon: FaUserDoctor },
   ]
 
   // Embla carousel
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3500 })])
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 5500 })])
   return (
     <div>
-      {/* Hero section with swiper */}
-      {/* <HeroCarousel /> */}
-
       <div className="overflow-hidden w-full" ref={emblaRef}>
         {/* flex container  */}
         <div className="flex">
@@ -60,11 +51,11 @@ function Home() {
             {/* 3. Content: Centered on mobile, left-aligned on desktop */}
             <div className="relative z-10 w-full px-6 md:px-12 text-left text-white max-w-7xl mx-auto">
               <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-2xl">
-                Accurate Laboratory Testing Made Simple
+                Accurate and Reliable Testing in One Place
               </h1>
               <p className="mt-4 text-lg md:text-xl opacity-90 max-w-150 mb-10">
-                For individuals, businesses, and organizations. Book tests, request quotes, and
-                access professional support with ease.
+                Book all screening, diagnostic and wellness test with access to free expert
+                consultation
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -102,7 +93,7 @@ function Home() {
             {/* 3. Content: Centered on mobile, left-aligned on desktop */}
             <div className="relative z-10 px-6 md:px-12 text-left text-white md:ml-auto w-max">
               <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-[340px] md:max-w-[600px] mb-8">
-                Your Trusted Partner in Medical Excellence
+                Your Trusted Partner in Laboratory Diagnosis
               </h1>
 
               {/* Icon list */}
@@ -124,6 +115,52 @@ function Home() {
               </ul>
             </div>
           </section>
+
+          {/*4. Global labconnect  */}
+          <section className="relative flex-[0_0_100%] min-h-75 md:min-h-150 flex items-center bg-[#01329C] py-20">
+            <img
+              src="/lab-guy-testing.png"
+              alt="Laboratory Microscope"
+              className="hidden md:block absolute inset-0 h-full w-full object-cover object-right"
+            />
+            {/* 2. Gradient Overlay: Only active on md+ screens */}
+            <div
+              className="absolute inset-0 md:bg-linear-to-r md:from-[#01329C] md:via-[#01329C]/80 md:to-transparent"
+              /* Inline style as a backup for precise control over the fade point */
+              style={{
+                background:
+                  "linear-gradient(90deg, #01329C 0%, #01329C 45%, rgba(1, 50, 156, 0) 100%)",
+              }}
+            />
+
+            {/* 3. Content: Centered on mobile, left-aligned on desktop */}
+            <div className="relative z-10 w-full px-6 md:px-12 text-left text-white max-w-7xl mx-auto">
+              <img
+                src="/global-labconnect-logo.png"
+                alt="Global labconnect"
+                className="size-35 md:size-40 mb-5"
+              />
+              {/* <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-2xl">
+                Global Labconnect
+              </h1> */}
+              <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-2xl">
+                Access to global laboratory innovation and diagnostic
+              </h1>
+              <p className="mt-4 text-lg md:text-xl opacity-90 max-w-150 mb-10">
+                True sustainable patnerships and evidence based solutions, GLC helps build resilient
+                laboratory systems that proves patient outcome and public health
+              </p>
+
+              {/* <div className="flex flex-col sm:flex-row gap-3"> */}
+              <Link
+                to="#"
+                className="bg-[#9B0100] text-lg px-5 py-3 rounded-full hover:opacity-85 hover:scale-x-105 transition-all text-white font-bold text-center"
+              >
+                Download Brochure
+              </Link>
+              {/* </div> */}
+            </div>
+          </section>
         </div>
       </div>
 
@@ -139,7 +176,7 @@ function Home() {
             </div>
             <h3 className="text-[#01329C] font-semibold text-lg mb-2">Individuals</h3>
             <p className="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
-              Personal health testing and consultations
+              Personal health screening, diagnostic test and consultation
             </p>
             <Link
               to="/book-appointment"
@@ -150,9 +187,11 @@ function Home() {
           </div>
           <div className="flex flex-col items-center">
             <div className="border-10 border-[#b855ac] rounded-full size-30 grid place-items-center mb-4">
-              <FaBalanceScale color="#b855ac" size={70} />
+              <MdOutlineHealthAndSafety color="#b855ac" size={70} />
             </div>
-            <h3 className="text-[#b855ac] font-semibold text-lg mb-2">Businesses</h3>
+            <h3 className="text-[#b855ac] font-semibold text-lg mb-2 text-center">
+              Healthcare provider and hospitals
+            </h3>
             <p className="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
               Staff testing and health services
             </p>
@@ -169,7 +208,7 @@ function Home() {
             </div>
             <h3 className="text-[#e65400] font-semibold text-lg mb-2">Corporate Organizations</h3>
             <p className="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
-              Large-scale and compliance testing
+              HMO, Insurance companies and Immigration
             </p>
             <Link
               to="/book-appointment"
@@ -182,9 +221,9 @@ function Home() {
             <div className="border-10 border-[#0097A9] rounded-full size-30 grid place-items-center mb-4">
               <PiHandshakeFill color="#0097A9" size={70} />
             </div>
-            <h3 className="text-[#0097A9] font-semibold text-lg mb-2">Employment & Drug Testing</h3>
+            <h3 className="text-[#0097A9] font-semibold text-lg mb-2">Public institution</h3>
             <p className="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
-              Screening for hiring and workplace safety
+              Pre-school admission, pre-employment medical
             </p>
             <Link
               to="/book-appointment"
@@ -213,7 +252,7 @@ function Home() {
               </li>
               <li className="flex gap-2 items-start text-[#666]">
                 <SiTicktick color="#01329C" size={20} className="mt-1" />
-                <p>Access to expert pathologists and medical consultations</p>
+                <p>Free expert recommendation and interpretation</p>
               </li>
               <li className="flex gap-2 items-center text-[#666]">
                 <SiTicktick color="#01329C" />
@@ -226,6 +265,10 @@ function Home() {
               <li className="flex gap-2 items-center text-[#666]">
                 <SiTicktick color="#01329C" />
                 <p>Reports are user-friendly and confidential</p>
+              </li>
+              <li className="flex gap-2 items-center text-[#666]">
+                <SiTicktick color="#01329C" />
+                <p>Modern laboratory equipment</p>
               </li>
             </ul>
           </article>
@@ -377,7 +420,7 @@ function Home() {
             to="/book-appointment"
             className="bg-[#9B0100] text-white px-8 py-3 text-lg font-medium rounded-full transition-colors duration-200"
           >
-            Request Consultation
+            Speak to a professional
           </Link>
         </div>
       </section>

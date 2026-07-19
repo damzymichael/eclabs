@@ -1,7 +1,7 @@
 export const tabs = [
   {
     id: 0,
-    label: "Clinical Pathology",
+    label: "Diagnostic tests",
     color: "bg-[#1d5fb9]",
     borderColor: "border-[#1d5fb9]",
     textColor: "text-[#1d5fb9]",
@@ -29,10 +29,15 @@ export const tabs = [
       preHeading: "Peace of Mind", // [cite: 8]
       listItems: [
         { label: "Paternity Testing (Legal & Peace of Mind)" }, // [cite: 9]
-        { label: "Maternity Testing" }, // [cite: 9]
+        { label: "Maternity Testing" },
+        { label: "Immigration DNA testing" }, // [cite: 9]
         {
-          label: "Prenatal Screening", //
-          subItems: ["Paternity", "Sex determination", "Baby gender test", "Genetic Disease test"], //
+          label: "Prenatal Screening",
+          subItems: [
+            "Paternity",
+            "Baby gender test",
+            "Genetic disease screening(Sickle cell, Down syndrome, etc)",
+          ],
         },
       ],
       footerNote: "* All our Prenatal DNA tests are non-invasive. We use maternal blood.", // [cite: 14]
@@ -54,6 +59,7 @@ export const tabs = [
         { label: "Pre-employment Screening" }, // [cite: 18]
         { label: "Pre-school Screening" }, // [cite: 18]
         { label: "Travel Screening" }, // [cite: 19]
+        { label: "Fertility Screening" },
       ],
       footerNote: "",
       cta: "Get a Quote",
@@ -77,7 +83,7 @@ export const tabs = [
         { label: "Tramadol" }, // [cite: 31]
         { label: "Buprenorphine" }, // [cite: 32]
       ],
-      footerNote: "We use Urine, Saliva, or Hair depending on the purpose.", // [cite: 34, 37]
+      footerNote: "We use Blood, Urine, Saliva, or Hair depending on the purpose.", // [cite: 34, 37]
       cta: "Book appointment",
     },
   },
@@ -93,8 +99,9 @@ export const tabs = [
         { label: "HIV" }, // [cite: 40]
         { label: "Gonorrhea" }, // [cite: 45]
         { label: "Chlamydia" }, // [cite: 46]
-        { label: "Herpes" }, // [cite: 46]
+        { label: "Herpes Simplex 1 & 2" }, // [cite: 46]
         { label: "Hepatitis B and C" }, // [cite: 47]
+        { label: "Syphilis" }, // [cite: 48]
       ],
       footerNote: "Strictly Confidential Reports.", // [cite: 55]
       cta: "Book appointment",
@@ -111,17 +118,17 @@ export const steps = [
   {
     number: 2,
     title: "PLAN",
-    description: "Choose home or lab visit",
+    description: "Choose office, home or lab visit",
   },
   {
     number: 3,
     title: "COLLECTION",
-    description: "Sample is collected",
+    description: "Sample is collected and analysed",
   },
   {
     number: 4,
     title: "RESULTS",
-    description: "Get results and support",
+    description: "Get results and support either physically or electronically",
   },
 ]
 
