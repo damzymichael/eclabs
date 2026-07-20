@@ -1,56 +1,109 @@
 import { useState, useEffect } from "react"
 import { TiThMenu } from "react-icons/ti"
-import { FaPhoneAlt, FaChevronDown } from "react-icons/fa"
+import {
+  FaPhoneAlt,
+  FaChevronDown,
+  FaHeartbeat,
+  FaTint,
+  FaRibbon,
+  FaMale,
+  FaChild,
+  FaPlane,
+  FaVenusMars,
+  FaGraduationCap,
+  FaBriefcase,
+  FaUserFriends,
+} from "react-icons/fa"
 import { IoMail } from "react-icons/io5"
+import { MdBloodtype, MdPregnantWoman } from "react-icons/md"
+import {
+  FaBacteria,
+  FaVial,
+  FaDna,
+  FaMicroscope,
+  FaSuitcaseMedical,
+  FaScaleBalanced,
+  FaVirus,
+  FaBabyCarriage,
+  FaPassport,
+} from "react-icons/fa6"
+import { GiAntibody, GiKidneys, GiLiver } from "react-icons/gi"
 
 const categories = [
   {
     title: "Diagnostic tests",
     link: "/services/diagnostic-tests",
     links: [
-      "Microbiology",
-      "Hematology",
-      "Chemistry",
-      "Immunology",
-      "Histopathology",
-      "Molecular Diagnostics",
+      { name: "Haematology", icon: <MdBloodtype className="text-red-600 text-[1.35rem]" /> },
+      {
+        name: "Medical Microbiology",
+        icon: <FaBacteria className="text-[#01329C] text-[1.35rem]" />,
+      },
+      { name: "Clinical Chemistry", icon: <FaVial className="text-[#01329C] text-[1.35rem]" /> },
+      { name: "Molecular Diagnostics", icon: <FaDna className="text-[#01329C] text-[1.35rem]" /> },
+      { name: "Immunology", icon: <GiAntibody className="text-[#01329C] text-[1.35rem]" /> },
+      { name: "Histopathology", icon: <FaMicroscope className="text-[#01329C] text-[1.35rem]" /> },
     ],
   },
   {
     title: "DNA Testing",
-    link: "#",
+    link: "/services/dna-testing",
     links: [
-      "Paternity Testing",
-      "Maternity Testing",
-      "Prenatal Paternity",
-      "Baby Gender Test",
-      "Genetic Disease Test",
-      "Immigration testing",
+      { name: "Paternity Testing", icon: <FaMale className="text-[#01329C] text-[1.35rem]" /> },
+      {
+        name: "Maternity Testing",
+        icon: <MdPregnantWoman className="text-[#01329C] text-[1.35rem]" />,
+      },
+      {
+        name: "Prenatal Paternity",
+        icon: <FaBabyCarriage className="text-[#01329C] text-[1.35rem]" />,
+      },
+      { name: "Baby Gender Test", icon: <FaVenusMars className="text-[#01329C] text-[1.35rem]" /> },
+      { name: "Genetic Disease Test", icon: <FaDna className="text-[#01329C] text-[1.35rem]" /> },
+      {
+        name: "Immigration testing",
+        icon: <FaPassport className="text-[#01329C] text-[1.35rem]" />,
+      },
     ],
   },
   {
     title: "General Health Screening",
-    link: "#",
+    link: "/services/general-health-screening",
     links: [
-      "Diabetes and Hypertension",
-      "Kidney, Heart and Liver",
-      "Cancer Screening",
-      "Pre-employment Screening",
-      "Pre-School Screening",
-      "Travel Screening",
-      "Fertility and Libido test",
+      { name: "Hypertension", icon: <FaHeartbeat className="text-[#106c27] text-[1.35rem]" /> },
+      { name: "Diabetes", icon: <FaTint className="text-[#106c27] text-[1.35rem]" /> },
+      { name: "Kidney Health", icon: <GiKidneys className="text-[#106c27] text-[1.35rem]" /> },
+      { name: "Liver Health", icon: <GiLiver className="text-[#106c27] text-[1.35rem]" /> },
+      { name: "Cancer Screening", icon: <FaRibbon className="text-[#106c27] text-[1.35rem]" /> },
+      { name: "Prostate Health", icon: <FaMale className="text-[#01329C] text-[1.35rem]" /> },
+      { name: "Preschool Medicals", icon: <FaChild className="text-[#106c27] text-[1.35rem]" /> },
+      {
+        name: "Pre-employment Medicals",
+        icon: <FaSuitcaseMedical className="text-[#106c27] text-[1.35rem]" />,
+      },
+      {
+        name: "Travel Medical Screening",
+        icon: <FaPlane className="text-[#106c27] text-[1.35rem]" />,
+      },
     ],
   },
   {
     title: "Drug & STI Testing",
-    link: "#",
+    link: "/services/drug-sti-testing",
     links: [
-      "Workplace & School Drug Testing",
-      "Urine, Saliva & Hair Analysis",
-      "HIV Testing",
-      "Gonorrhoea & Chlamydia",
-      "Herpes & Syphilis",
-      "Hepatitis B and C",
+      { name: "Schools", icon: <FaGraduationCap className="text-[#43158c] text-[1.35rem]" /> },
+      { name: "Workplace", icon: <FaBriefcase className="text-[#43158c] text-[1.35rem]" /> },
+      { name: "Legal", icon: <FaScaleBalanced className="text-[#43158c] text-[1.35rem]" /> },
+      {
+        name: "Family Peace of Mind",
+        icon: <FaUserFriends className="text-[#43158c] text-[1.35rem]" />,
+      },
+      { name: "STI Screening", icon: <FaVenusMars className="text-[#01329C] text-[1.35rem]" /> },
+      {
+        name: "Infectious Diseases",
+        icon: <FaBacteria className="text-[#01329C] text-[1.35rem]" />,
+      },
+      { name: "HBV & HCV Viral Load", icon: <FaVirus className="text-[#01329C] text-[1.35rem]" /> },
     ],
   },
 ]
@@ -113,7 +166,7 @@ function Navbar() {
                 onMouseLeave={() => setIsHovered(false)}
                 className="relative flex items-center gap-2 py-4"
               >
-                <a href="">Our Services</a>
+                <a href="/services">Our Services</a>
                 <FaChevronDown className="mt-1" />
               </li>
 
@@ -137,7 +190,11 @@ function Navbar() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="ml-6 lg:ml-8">
-              <a className="text-white bg-[#01329C] py-3 px-5 rounded-full font-medium cursor-pointer hover:opacity-85 hover:scale-x-105 transition-all">
+              <a
+                download
+                href="/ec_labs_full_test_menu.pdf"
+                className="text-white bg-[#01329C] py-3 px-5 rounded-full font-medium cursor-pointer hover:opacity-85 hover:scale-x-105 transition-all"
+              >
                 Download full test menu
               </a>
             </div>
@@ -162,9 +219,16 @@ function Navbar() {
                       <li key={linkIndex}>
                         <a
                           href="#"
-                          className="text-gray-600 font-medium hover:text-[#01329C] transition-colors duration-200"
+                          className="text-gray-600 font-medium hover:text-[#01329C] transition-colors duration-200 flex items-center gap-2"
                         >
-                          {link}
+                          {typeof link === "string" ? (
+                            link
+                          ) : (
+                            <>
+                              {link.icon}
+                              <span>{link.name}</span>
+                            </>
+                          )}
                         </a>
                       </li>
                     ))}
@@ -178,26 +242,30 @@ function Navbar() {
 
       {mobileNav && (
         <>
-          <div 
-            className="fixed inset-0 top-[104px] bg-black/20 backdrop-blur-sm z-40 md:hidden"
+          <div
+            className="fixed inset-0 top-26 bg-black/20 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setMobileNav(false)}
           />
-          <nav className="md:hidden bg-white w-full fixed left-0 top-[104px] z-50 max-h-[calc(100vh-104px)] overflow-y-auto shadow-xl pb-4">
+          <nav className="md:hidden bg-white w-full fixed left-0 top-26 z-50 max-h-[calc(100vh-104px)] overflow-y-auto shadow-xl pb-4">
             <ul className="flex flex-col font-semibold text-lg text-[#808080] px-6">
               <li className="border-b border-gray-100 py-5">
-                <a href="/" onClick={() => setMobileNav(false)}>Home</a>
+                <a href="/" onClick={() => setMobileNav(false)}>
+                  Home
+                </a>
               </li>
 
               <li className="border-b border-gray-100 py-5">
-                <a href="/about-us" onClick={() => setMobileNav(false)}>About us</a>
+                <a href="/about-us" onClick={() => setMobileNav(false)}>
+                  About us
+                </a>
               </li>
 
               <li className="border-b border-gray-100 py-5 flex flex-col">
-                <span className="text-gray-900 mb-3">Our Services</span>
-                <ul className="flex flex-col pl-4 space-y-3 font-medium text-[1.05rem] text-[#01329C]">
+                <span className="mb-3">Our Services</span>
+                <ul className="flex flex-col pl-2 space-y-3 font-medium text-[1.05rem] text-[#01329C]">
                   {categories.map((category, idx) => (
                     <li key={idx}>
-                      <a href={category.link} onClick={() => setMobileNav(false)}>
+                      <a className="underline" href={category.link} onClick={() => setMobileNav(false)}>
                         {category.title}
                       </a>
                     </li>
@@ -206,7 +274,9 @@ function Navbar() {
               </li>
 
               <li className="py-5">
-                <a href="/book-appointment" onClick={() => setMobileNav(false)}>Contact us</a>
+                <a href="/book-appointment" onClick={() => setMobileNav(false)}>
+                  Contact us
+                </a>
               </li>
             </ul>
           </nav>

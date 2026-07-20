@@ -93,7 +93,7 @@ function HeroSwiper() {
 
           {/* 3. Content: Centered on mobile, left-aligned on desktop */}
           <div className="relative z-10 px-6 md:px-12 text-left text-white md:ml-auto w-max">
-            <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-[340px] md:max-w-[600px] mb-8">
+            <h1 className="text-3xl font-bold leading-tight md:text-5xl max-w-85 md:max-w-150 mb-8">
               Your Trusted Partner in Laboratory Diagnosis
             </h1>
 
@@ -120,7 +120,7 @@ function HeroSwiper() {
         {/*4. Global labconnect  */}
         <section className="relative flex-[0_0_100%] min-h-75 md:min-h-150 flex items-center bg-[#01329C] py-20">
           <img
-            src="/lab-guy-testing.png"
+            src="/global-labconnect-hero.JPG"
             alt="Laboratory Microscope"
             className="hidden md:block absolute inset-0 h-full w-full object-cover object-right"
           />
@@ -154,7 +154,8 @@ function HeroSwiper() {
 
             {/* <div className="flex flex-col sm:flex-row gap-3"> */}
             <a
-              href="#"
+              href="/global-labconnect-brochure.pdf"
+              download
               className="bg-[#9B0100] text-lg px-5 py-3 rounded-full hover:opacity-85 hover:scale-x-105 transition-all text-white font-bold text-center"
             >
               Download Brochure
