@@ -1,0 +1,206 @@
+---
+import Layout from "../layouts/Layout.astro"
+import HeroSwiper from "../components/HeroSwiper"
+import OurServices from "../components/OurServices"
+import Reviews from "../components/Reviews"
+import Professional from "../components/Professional"
+
+import { IoIosPeople } from "react-icons/io"
+import { MdOutlineHealthAndSafety } from "react-icons/md"
+import { FaBuilding } from "react-icons/fa"
+import { PiHandshakeFill } from "react-icons/pi"
+import { SiTicktick } from "react-icons/si"
+
+import { steps } from "../lib/data"
+---
+
+<Layout>
+  <div>
+    <HeroSwiper client:load />
+
+    <!-- Different types of services with icons   -->
+    <section class="pt-18">
+      <h3 class="text-center text-[#01329C] text-4xl md:text-5xl font-bold pb-20">WHO WE SERVE</h3>
+      <div
+        class="max-w-7xl mx-auto grid gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center px-4 pb-26"
+      >
+        <div class="flex flex-col items-center">
+          <div class="border-10 border-[#01329C] rounded-full size-30 grid place-items-center mb-4">
+            <IoIosPeople color="#01329C" size={70} />
+          </div>
+          <h3 class="text-[#01329C] font-semibold text-lg mb-2">Individuals</h3>
+          <p class="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
+            Personal health screening, diagnostic test and consultation
+          </p>
+          <a
+            href="/book-appointment"
+            class="text-white bg-[#01329C] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all"
+          >
+            Book appointment
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="border-10 border-[#b855ac] rounded-full size-30 grid place-items-center mb-4">
+            <MdOutlineHealthAndSafety color="#b855ac" size={70} />
+          </div>
+          <h3 class="text-[#b855ac] font-semibold text-lg mb-2 text-center">
+            Healthcare provider and hospitals
+          </h3>
+          <p class="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
+            Staff testing and health services
+          </p>
+          <a
+            href="/book-appointment"
+            class="text-white bg-[#b855ac] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all mt-auto"
+          >
+            Request Quote
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="border-10 border-[#e65400] rounded-full size-30 grid place-items-center mb-4">
+            <FaBuilding color="#e65400" size={70} />
+          </div>
+          <h3 class="text-[#e65400] font-semibold text-lg mb-2">Corporate Organizations</h3>
+          <p class="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
+            HMO, Insurance companies and Immigration
+          </p>
+          <a
+            href="/book-appointment"
+            class="text-white bg-[#e65400] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all mt-auto"
+          >
+            Request Quote
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="border-10 border-[#0097A9] rounded-full size-30 grid place-items-center mb-4">
+            <PiHandshakeFill color="#0097A9" size={70} />
+          </div>
+          <h3 class="text-[#0097A9] font-semibold text-lg mb-2">Public institution</h3>
+          <p class="max-w-60 text-center text-sm text-[#666] font-medium mb-5">
+            Pre-school admission, pre-employment medical
+          </p>
+          <a
+            href="/book-appointment"
+            class="text-white bg-[#0097A9] py-3 px-5 rounded-full font-medium hover:opacity-85 hover:scale-x-105 transition-all mt-auto"
+          >
+            Book appointment
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* The expert authority you can trust  */}
+    <section class="py-26 bg-[#BFD3FF]">
+      <h3 class="text-center text-[#01329C] text-4xl md:text-5xl font-bold uppercase">
+        The expert authority you can trust
+      </h3>
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-5 items-start px-4 pt-7 md:pt-10"
+      >
+        <article class="w-full md:w-1/2 mx-auto md:text-center">
+          <header class="mb-3">
+            <h3 class="text-[#01329C] font-bold text-2xl">Why Choose EC Laboratory</h3>
+          </header>
+          <ul class="space-y-4 md:space-y-6 flex flex-col md:items-center font-semibold">
+            <li class="flex gap-2 items-center text-[#666]">
+              <div class="mt-1">
+                <SiTicktick color="#01329C" size={20} />
+              </div>
+              <p>Fast and accurate results</p>
+            </li>
+            <li class="flex gap-2 items-start text-[#666]">
+              <div class="mt-1">
+                <SiTicktick color="#01329C" size={20} />
+              </div>
+              <p>Free expert recommendation and interpretation</p>
+            </li>
+            <li class="flex gap-2 items-center text-[#666]">
+              <div class="mt-1">
+                <SiTicktick color="#01329C" size={20} />
+              </div>
+              <p>All your tests in one place</p>
+            </li>
+            <li class="flex gap-2 items-start text-[#666]">
+              <div class="mt-1">
+                <SiTicktick color="#01329C" size={20} />
+              </div>
+              <p>Home and office sample collection services are available</p>
+            </li>
+            <li class="flex gap-2 items-center text-[#666]">
+              <div class="mt-1">
+                <SiTicktick color="#01329C" size={20} />
+              </div>
+              <p>Reports are user-friendly and confidential</p>
+            </li>
+            <li class="flex gap-2 items-center text-[#666]">
+              <div class="mt-1">
+                <SiTicktick color="#01329C" size={20} />
+              </div>
+              <p>Modern laboratory equipment</p>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Our Services  -->
+    <OurServices client:load />
+
+    <!-- How it works  -->
+    <section class="bg-[#002B9A] py-16 px-4 font-sans mb-10">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-white text-4xl md:text-5xl font-bold mb-24 tracking-wide">HOW IT WORKS</h2>
+
+        {/* Steps Grid */}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            steps.map((step) => (
+              <div class="flex flex-col items-center">
+                {/* Number Box */}
+                <div class="bg-white w-12 h-12 flex items-center justify-center rounded-md mb-6 shadow-lg">
+                  <span class="text-[#FF4D4D] text-2xl font-semibold">{step.number}</span>
+                </div>
+
+                {/* Title */}
+                <h3 class="text-white text-xl font-bold mb-3 tracking-wider">{step.title}</h3>
+
+                {/* Description */}
+                <p class="text-white text-lg font-light leading-relaxed max-w-50">
+                  {step.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials  -->
+    <section class="py-10">
+      <h3 class="text-center text-[#01329C] text-4xl md:text-5xl font-bold mb-16 uppercase px-4">
+        Real reviews from real people
+      </h3>
+      <Reviews client:visible />
+    </section>
+
+    <!-- Speak to a professional  -->
+    <section
+      class="relative w-full h-100 flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 43, 154, 0.85), rgba(0, 43, 154, 0.85)), url('/nurse-lab.jpg')`,
+      }}
+    >
+      <div class="text-center px-4 max-w-2xl">
+        <h2 class="text-white text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          NOT SURE WHAT YOU NEED
+        </h2>
+
+        <p class="text-white text-xl md:text-2xl font-light mb-8 leading-snug">
+          Speak with a professional and <br class="hidden md:block" /> get the right guidance.
+        </p>
+
+        <Professional client:visible />
+      </div>
+    </section>
+  </div>
+</Layout>

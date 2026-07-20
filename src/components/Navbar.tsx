@@ -1,8 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { TiThMenu } from "react-icons/ti"
 import { FaPhoneAlt, FaChevronDown } from "react-icons/fa"
 import { IoMail } from "react-icons/io5"
-import { Link } from "react-router-dom"
 
 const categories = [
   {
@@ -56,9 +55,21 @@ const categories = [
   },
 ]
 
+// Todo Mobile navigation
 function Navbar() {
   const [mobileNav, setMobileNav] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
+
+  useEffect(() => {
+    if (mobileNav) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [mobileNav])
   return (
     <div className="sticky top-0 z-50">
       <div className="">
@@ -90,11 +101,11 @@ function Navbar() {
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8 text-lg font-semibold text-[#808080]">
               <li>
-                <Link to="/">Home</Link>
+                <a href="/">Home</a>
               </li>
 
               <li>
-                <Link to="/about-us">About us</Link>
+                <a href="/about-us">About us</a>
               </li>
 
               <li
@@ -107,12 +118,12 @@ function Navbar() {
               </li>
 
               <li>
-                <Link
-                  to="/book-appointment"
+                <a
+                  href="/book-appointment"
                   className="bg-[#9B0100] px-5 py-3 rounded-full text-white"
                 >
                   Book appointment
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>
@@ -139,12 +150,12 @@ function Navbar() {
                     ${index % 2 !== 0 ? "sm:border-l sm:border-dotted sm:border-gray-400 lg:border-l" : ""}
                   `}
                 >
-                  <Link
-                    to={category.link}
+                  <a
+                    href={category.link}
                     className="text-[#01329C] font-bold text-lg mb-2 cursor-pointer hover:underline"
                   >
                     {category.title}
-                  </Link>
+                  </a>
 
                   <ul className="space-y-3">
                     {category.links.map((link, linkIndex) => (
@@ -166,25 +177,40 @@ function Navbar() {
       )}
 
       {mobileNav && (
-        <nav className="md:hidden bg-white w-full fixed left-0 top-24 z-10">
-          <ul className="flex flex-col font-semibold text-lg text-[#808080] px-4 pb-30">
-            <li className="border-b border-t py-6 flex items-center justify-between">
-              <Link to="/">Home</Link>
-            </li>
+        <>
+          <div 
+            className="fixed inset-0 top-[104px] bg-black/20 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setMobileNav(false)}
+          />
+          <nav className="md:hidden bg-white w-full fixed left-0 top-[104px] z-50 max-h-[calc(100vh-104px)] overflow-y-auto shadow-xl pb-4">
+            <ul className="flex flex-col font-semibold text-lg text-[#808080] px-6">
+              <li className="border-b border-gray-100 py-5">
+                <a href="/" onClick={() => setMobileNav(false)}>Home</a>
+              </li>
 
-            <li className="border-b py-6 flex items-center justify-between">
-              <Link to="/about-us">About us</Link>
-            </li>
+              <li className="border-b border-gray-100 py-5">
+                <a href="/about-us" onClick={() => setMobileNav(false)}>About us</a>
+              </li>
 
-            <li className="border-b py-6 flex items-center justify-between">
-              <a href="">Our Services</a>
-            </li>
+              <li className="border-b border-gray-100 py-5 flex flex-col">
+                <span className="text-gray-900 mb-3">Our Services</span>
+                <ul className="flex flex-col pl-4 space-y-3 font-medium text-[1.05rem] text-[#01329C]">
+                  {categories.map((category, idx) => (
+                    <li key={idx}>
+                      <a href={category.link} onClick={() => setMobileNav(false)}>
+                        {category.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
 
-            <li className="border-b py-6 flex items-center justify-between">
-              <a href="">Contact us</a>
-            </li>
-          </ul>
-        </nav>
+              <li className="py-5">
+                <a href="/book-appointment" onClick={() => setMobileNav(false)}>Contact us</a>
+              </li>
+            </ul>
+          </nav>
+        </>
       )}
     </div>
   )

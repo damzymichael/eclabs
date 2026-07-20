@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react"
 import useEmblaCarousel from "embla-carousel-react"
-import { reviews } from "../data"
+import { reviews } from "../lib/data"
 import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5"
 import { IoStarSharp } from "react-icons/io5"
 import { FaCheckCircle } from "react-icons/fa"

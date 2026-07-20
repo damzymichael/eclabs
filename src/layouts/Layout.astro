@@ -1,0 +1,171 @@
+---
+import "../styles/global.css"
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa"
+import Navbar from "../components/Navbar"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/eclabs-logo-no-bg.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>EC Laboratory</title>
+  </head>
+  <body>
+    <div class="min-w-xs">
+      <Navbar client:load />
+      <main>
+        <slot />
+      </main>
+      <footer class="bg-[#222222] text-white font-sans">
+        {/* Top Section: Main Content */}
+        <div class="max-w-7xl mx-auto px-6 py-12 flex flex-wrap gap-10">
+          {/* Column 1: About */}
+          <div class="max-w-70">
+            <h3 class="text-[#1d5fb9] font-bold mb-6">About EC Labs</h3>
+            <p class="text-sm leading-relaxed mb-8">
+              EC-Lab (Express Clinical Laboratory) Ltd is a leading provider of world-class
+              diagnostic and pathology services in Nigeria, committed to delivering accurate,
+              timely, and reliable laboratory results that support better healthcare decisions and
+              improved patient outcomes.
+            </p>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div class="min-w-50">
+            <h3 class="text-[#1d5fb9] font-bold mb-6">Quick links</h3>
+            <ul class="space-y-4 text-sm">
+              <li class="">
+                <a href="/">Home</a>
+              </li>
+
+              <li class="">
+                <a href="/about-us">About Us</a>
+              </li>
+
+              <li class="">
+                <a href="">Our Services</a>
+              </li>
+
+              <li class="">
+                <a href="">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Contact container */}
+          <div class="md:min-w-120">
+            <h3 class="text-[#1d5fb9] font-bold mb-6">Contact us</h3>
+            <div class="flex flex-wrap gap-4">
+              <div>
+                <div class="text-sm space-y-1 mb-4">
+                  <p class="font-semibold text-base">Head office – Benin-City</p>
+                  <p>2nd CONOIL Filling Station</p>
+                  <p>Adjacent Winners Chapel</p>
+                  <p>Airport Road, Benin City</p>
+                  <p>Edo State</p>
+                </div>
+                <div class="text-sm space-y-2">
+                  <p>0903 359 6255</p>
+                  <p>0912 905 4546</p>
+                  <p>0905 626 1339</p>
+                  <p>
+                    <span class="hover:underline cursor-pointer">info@alphabiolabs.com</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="max-w-54">
+                <div class="text-sm space-y-1 mb-4">
+                  <p class="font-semibold text-base">Edo Central Branch (Irrua)</p>
+                  <p>Km 87, Benin-Auchi Road</p>
+                  <p>Opposite Irrua Specialist Teaching Hospital</p>
+                  <p>Irrua, Edo State</p>
+                </div>
+                <div class="text-sm space-y-2">
+                  <p>0815 458 9202</p>
+                  <p>0912 905 4546</p>
+                  <p>0905 626 1339</p>
+                  <p>
+                    <span class="hover:underline cursor-pointer">info@alphabiolabs.com</span>
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div class="text-sm space-y-1 mb-4">
+                  <p class="font-semibold text-base">Edo North Branch (Auchi)</p>
+                  <p>Medical Plaza, No. 37,</p>
+                  <p>Igbei Road, Auchi</p>
+                </div>
+                <div class="text-sm space-y-2">
+                  <p>0905 898 9034</p>
+                  <p>0912 905 4546</p>
+                  <p>0905 626 1339</p>
+                  <p>
+                    <span class="hover:underline cursor-pointer">info@alphabiolabs.com</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Section: Utility Links */}
+        {
+          /* <div class="bg-[#333333] border-y border-gray-700">
+          <div class="max-w-7xl mx-auto px-6 py-4">
+            <ul class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-[13px] font-medium">
+              {[
+                "Cookie Policy",
+                "Terms & Conditions",
+                "Privacy",
+                "Complaints Policy",
+                "Carbon Reduction Plan",
+                "Environmental Policy",
+                "Quote Forms",
+                "AlphaBiolabs USA",
+                "AlphaBiolabs Ireland",
+                "Discount Codes",
+              ].map((link) => (
+                <li key={link} class="hover:underline cursor-pointer">
+                  {link}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div> */
+        }
+
+        {/* Bottom Section: Copyright & Social */}
+        <div class="bg-[#1a1a1a]">
+          <div
+            class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6"
+          >
+            <p class="text-xs text-gray-400">
+              © {new Date().getFullYear()} EC Labs Ltd - 2nd CONOIL Filling Station Adjacent Winners Chapel
+              Airport Road, Benin City Edo State
+            </p>
+
+            <div
+              class="hidden gap-6 text-gray-400 hover:text-white cursor-pointer transition-colors"
+            >
+              <FaFacebookF size={20} />
+              <FaTwitter size={20} />
+              <FaLinkedinIn size={20} />
+              <FaInstagram size={20} />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
