@@ -1,0 +1,140 @@
+---
+import Layout from "../../../layouts/Layout.astro"
+import { BsFillInfoCircleFill } from "react-icons/bs"
+import { FaCheckCircle } from "react-icons/fa"
+---
+
+<Layout>
+  <div class="w-full font-sans text-gray-800 bg-white">
+    {/* Breadcrumbs */}
+    <nav class="bg-gray-50 py-4 px-6 md:px-12 lg:px-24 border-b border-gray-200">
+      <ol class="flex items-center space-x-2 text-sm text-gray-500">
+        <li>
+          <a href="/" class="hover:underline hover:text-[#01329C] transition-colors"> Home </a>
+        </li>
+        <li>»</li>
+        <li>
+          <a href="/services" class="hover:underline hover:text-[#01329C] transition-colors"
+            >Services</a
+          >
+        </li>
+        <li>»</li>
+        <li class="text-gray-700 font-medium">General Health Screening</li>
+      </ol>
+    </nav>
+
+    {/* Hero Section */}
+    <section
+      class="relative py-20 md:py-28 px-6 text-center border-b border-gray-100 overflow-hidden bg-cover bg-center"
+      style="background-image: url('/about-us-background.jpg')"
+    >
+      <div class="absolute inset-0 bg-white/50 pointer-events-none"></div>
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#01329C] mb-6 tracking-tight">
+          General Health Screening
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 font-medium">
+          Comprehensive health screening panels focused on men's and women's health, ensuring early detection and proactive healthcare management.
+        </p>
+      </div>
+    </section>
+
+    {/* Important Notice Bar */}
+    <div class="bg-gray-100 py-6 px-6 md:px-12 lg:px-24 border-b border-gray-200">
+      <div class="flex items-center gap-3 text-gray-700">
+        <div class="shrink-0 text-red-600">
+          <BsFillInfoCircleFill size={20} />
+        </div>
+        <p class="text-lg leading-relaxed">
+          <span class="text-red-600 font-bold uppercase">IMPORTANT</span>
+          {" — "}
+          <a
+            download
+            href="/ec_labs_full_test_menu.pdf"
+            class="text-[#01329C] font-semibold hover:underline"
+          >
+            Click here
+          </a>{" "}
+          to download full list of laboratory tests
+        </p>
+      </div>
+    </div>
+
+    {/* Main Content Section */}
+    <section class="py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      
+      {/* Category 1 */}
+      <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
+        <div class="w-full md:w-1/2">
+          <img src="/lab-attendants-working.png" alt="Men's Health Screening" class="rounded-2xl shadow-lg w-full h-auto object-cover max-h-96" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold text-[#01329C] mb-6">Men's Health Screening</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Our specialized men's health bundles cover essential areas to maintain vitality, reproductive health, and screen for common male-specific conditions.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <div class="text-gray-700 text-lg">
+                <strong>Male Infertility & Libido Test:</strong>
+                <p class="text-sm mt-1 text-gray-500">Includes Seminal fluid analysis (SFA), Follicle-Stimulating Hormone (FSH), Luteinizing Hormone (LH), and Total Testosterone (morning sample).</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <div class="text-gray-700 text-lg">
+                <strong>Male Cancers:</strong>
+                <p class="text-sm mt-1 text-gray-500">Prostate specific antigen (PSA) test for early detection of prostate cancer.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Category 2 */}
+      <div class="flex flex-col md:flex-row-reverse items-center gap-10 mb-10">
+        <div class="w-full md:w-1/2">
+          <img src="/lab-guy-testing.png" alt="Women's Health Screening" class="rounded-2xl shadow-lg w-full h-auto object-cover max-h-96" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold text-[#01329C] mb-6">Women's Health Screening</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Comprehensive testing for women at every stage of life, from reproductive health to menopause and specific cancer screenings.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <div class="text-gray-700 text-lg">
+                <strong>Infertility & Ovarian Reserve:</strong>
+                <p class="text-sm mt-1 text-gray-500">FSH, LH, Oestriadiol, Prolactin, Testosterone, and Anti-Mullerian Hormone panels.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <div class="text-gray-700 text-lg">
+                <strong>Pregnancy Panel:</strong>
+                <p class="text-sm mt-1 text-gray-500">Pregnancy test (BHCG) and TORCH Screening (Toxoplasmosis, Rubella, Cytomegalovirus, Herpes simplex).</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <div class="text-gray-700 text-lg">
+                <strong>Menopausal Screen:</strong>
+                <p class="text-sm mt-1 text-gray-500">Includes FSH, LH, and Oestriadiol (Estrogen E2).</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <div class="text-gray-700 text-lg">
+                <strong>Female Cancers:</strong>
+                <p class="text-sm mt-1 text-gray-500">Cervical cancer screening including Cytology (Pap smear) and Human papillomavirus (HPV) screen/Genotyping.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</Layout>

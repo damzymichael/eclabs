@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro"
 import { BsFillInfoCircleFill } from "react-icons/bs"
+import { FaCheckCircle } from "react-icons/fa"
 ---
 
 <Layout>
@@ -27,20 +28,18 @@ import { BsFillInfoCircleFill } from "react-icons/bs"
       class="relative py-20 md:py-28 px-6 text-center border-b border-gray-100 overflow-hidden bg-cover bg-center"
       style="background-image: url('/about-us-background.jpg')"
     >
-      {/* Overlay to ensure text readability */}
-      <div class="absolute inset-0 bg-white/40 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-white/50 pointer-events-none"></div>
       <div class="relative z-10 max-w-4xl mx-auto">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#01329C] mb-6 tracking-tight">
           Diagnostic Tests
         </h1>
-        <p class="text-lg md:text-xl text-gray-600 font-medium">
-          Delivering accurate, timely, and reliable laboratory results that support better
-          healthcare decisions.
+        <p class="text-lg md:text-xl text-gray-700 font-medium">
+          Comprehensive, state-of-the-art laboratory testing covering Microbiology, Haematology, Clinical Chemistry, and more to aid in accurate medical diagnosis and treatment planning.
         </p>
       </div>
     </section>
 
-    {/* 3. Important Notice Bar */}
+    {/* Important Notice Bar */}
     <div class="bg-gray-100 py-6 px-6 md:px-12 lg:px-24 border-b border-gray-200">
       <div class="flex items-center gap-3 text-gray-700">
         <div class="shrink-0 text-red-600">
@@ -60,5 +59,64 @@ import { BsFillInfoCircleFill } from "react-icons/bs"
         </p>
       </div>
     </div>
+
+    {/* Main Content Section */}
+    <section class="py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      
+      {/* Category 1 */}
+      <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
+        <div class="w-full md:w-1/2">
+          <img src="/microscope-lab.png" alt="Laboratory testing" class="rounded-2xl shadow-lg w-full h-auto object-cover max-h-96" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold text-[#01329C] mb-6">Routine & Specialized Testing</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Our comprehensive diagnostic services are designed to give doctors and patients the complete picture. We utilize advanced technologies and stringent quality control to deliver precise results across multiple disciplines.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Medical Microbiology:</strong> Identification of bacterial, fungal, and parasitic infections and antibiotic susceptibility testing.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Haematology:</strong> Analysis of blood components to diagnose conditions like anemia, infection, and clotting disorders.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Clinical Chemistry:</strong> Measurement of enzymes, metabolites, and electrolytes to evaluate organ function and overall health.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Category 2 */}
+      <div class="flex flex-col md:flex-row-reverse items-center gap-10 mb-10">
+        <div class="w-full md:w-1/2">
+          <img src="/lab-guy-testing.png" alt="Advanced Diagnostics" class="rounded-2xl shadow-lg w-full h-auto object-cover max-h-96" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold text-[#01329C] mb-6">Advanced Diagnostics</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Beyond standard panels, we offer specialized testing services using state-of-the-art diagnostic equipment, providing in-depth analysis for complex medical conditions.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Molecular Diagnostics:</strong> Advanced DNA/RNA based testing for precise pathogen detection and genetic analysis.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Immunology:</strong> Evaluation of the immune system to detect autoimmune diseases, allergies, and specific antibodies.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Histopathology:</strong> Microscopic examination of tissue samples for accurate disease diagnosis and cancer detection.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
   </div>
 </Layout>

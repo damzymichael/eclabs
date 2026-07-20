@@ -1,0 +1,130 @@
+---
+import Layout from "../../../layouts/Layout.astro"
+import { BsFillInfoCircleFill } from "react-icons/bs"
+import { FaCheckCircle } from "react-icons/fa"
+---
+
+<Layout>
+  <div class="w-full font-sans text-gray-800 bg-white">
+    {/* Breadcrumbs */}
+    <nav class="bg-gray-50 py-4 px-6 md:px-12 lg:px-24 border-b border-gray-200">
+      <ol class="flex items-center space-x-2 text-sm text-gray-500">
+        <li>
+          <a href="/" class="hover:underline hover:text-[#01329C] transition-colors"> Home </a>
+        </li>
+        <li>»</li>
+        <li>
+          <a href="/services" class="hover:underline hover:text-[#01329C] transition-colors"
+            >Services</a
+          >
+        </li>
+        <li>»</li>
+        <li class="text-gray-700 font-medium">DNA Testing</li>
+      </ol>
+    </nav>
+
+    {/* Hero Section */}
+    <section
+      class="relative py-20 md:py-28 px-6 text-center border-b border-gray-100 overflow-hidden bg-cover bg-center"
+      style="background-image: url('/about-us-background.jpg')"
+    >
+      <div class="absolute inset-0 bg-white/50 pointer-events-none"></div>
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#01329C] mb-6 tracking-tight">
+          DNA Testing
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 font-medium">
+          We are a leading provider of DNA testing solutions using the very latest techniques in DNA analysis to help people verify biological relationships, determine baby gender, and screen for genetic diseases at 10 weeks of pregnancy.
+        </p>
+      </div>
+    </section>
+
+    {/* Important Notice Bar */}
+    <div class="bg-gray-100 py-6 px-6 md:px-12 lg:px-24 border-b border-gray-200">
+      <div class="flex items-center gap-3 text-gray-700">
+        <div class="shrink-0 text-red-600">
+          <BsFillInfoCircleFill size={20} />
+        </div>
+        <p class="text-lg leading-relaxed">
+          <span class="text-red-600 font-bold uppercase">IMPORTANT</span>
+          {" — "}
+          <a
+            download
+            href="/ec_labs_full_test_menu.pdf"
+            class="text-[#01329C] font-semibold hover:underline"
+          >
+            Click here
+          </a>{" "}
+          to download full list of laboratory tests
+        </p>
+      </div>
+    </div>
+
+    {/* Main Content Section */}
+    <section class="py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      
+      {/* Category 1 */}
+      <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
+        <div class="w-full md:w-1/2">
+          <img src="/lab-girl-testing.png" alt="DNA Testing" class="rounded-2xl shadow-lg w-full h-auto object-cover max-h-96" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold text-[#01329C] mb-6">Our DNA Testing Services</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            We offer a comprehensive range of DNA testing services catering to various personal, legal, and medical needs.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Paternity Testing:</strong> For peace of mind, legal, and immigration purposes.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Maternity & Sibling Testing:</strong> Verify biological relationships confidently.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Prenatal Paternity:</strong> Non-invasive prenatal paternity test (NIPP).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Pre-Natal DNA Tests:</strong> Baby gender test and Genetic disease screening (Sickle cell disease, Down syndrome, etc).</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Category 2 */}
+      <div class="flex flex-col md:flex-row-reverse items-center gap-10 mb-10">
+        <div class="w-full md:w-1/2">
+          <img src="/nurse-lab.jpg" alt="Why Choose Us" class="rounded-2xl shadow-lg w-full h-auto object-cover max-h-96" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold text-[#01329C] mb-6">Why Choose Our DNA Test Services?</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            We prioritize your safety, privacy, and convenience, delivering results you can trust with the highest level of confidentiality.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Non-invasive procedures:</strong> Just a simple cheek swab required from adults and newborn babies or a blood sample from the mother for pre-natal tests.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>100% Risk-Free:</strong> Our prenatal DNA test is completely safe for both mother and baby.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Latest Technologies:</strong> Utilizing state-of-the-art laboratory equipment for precise results.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <FaCheckCircle className="text-[#106c27] mt-1 shrink-0" size={20} />
+              <span class="text-gray-700 text-lg"><strong>Confidential & Convenient:</strong> 100% confidential. Home, office, or workplace sample collection services are available.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</Layout>
