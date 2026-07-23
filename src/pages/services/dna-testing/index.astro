@@ -1,7 +1,9 @@
 ---
 import Layout from "../../../layouts/Layout.astro"
 import { BsFillInfoCircleFill } from "react-icons/bs"
-import { FaCheckCircle } from "react-icons/fa"
+import { FaCheckCircle, FaMale, FaVenusMars } from "react-icons/fa"
+import { MdPregnantWoman } from "react-icons/md"
+import { FaBabyCarriage, FaDna, FaPassport } from "react-icons/fa6"
 ---
 
 <Layout>
@@ -63,6 +65,49 @@ import { FaCheckCircle } from "react-icons/fa"
     {/* Main Content Section */}
     <section class="py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
       
+      {/* Services Grid */}
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-center text-[#01329C] mb-12">Our DNA Tests</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+            <div class="mb-5 bg-white p-4 rounded-full shadow-md text-[#01329C] group-hover:scale-110 transition-transform duration-300">
+              <FaMale size={40} />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800">Paternity Testing</h3>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+            <div class="mb-5 bg-white p-4 rounded-full shadow-md text-[#01329C] group-hover:scale-110 transition-transform duration-300">
+              <MdPregnantWoman size={40} />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800">Maternity Testing</h3>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+            <div class="mb-5 bg-white p-4 rounded-full shadow-md text-[#01329C] group-hover:scale-110 transition-transform duration-300">
+              <FaBabyCarriage size={40} />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800">Prenatal Paternity</h3>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+            <div class="mb-5 bg-white p-4 rounded-full shadow-md text-[#01329C] group-hover:scale-110 transition-transform duration-300">
+              <FaVenusMars size={40} />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800">Baby Gender Test</h3>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+            <div class="mb-5 bg-white p-4 rounded-full shadow-md text-[#01329C] group-hover:scale-110 transition-transform duration-300">
+              <FaDna size={40} />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800">Genetic Disease Test</h3>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+            <div class="mb-5 bg-white p-4 rounded-full shadow-md text-[#01329C] group-hover:scale-110 transition-transform duration-300">
+              <FaPassport size={40} />
+            </div>
+            <h3 class="font-bold text-xl text-gray-800">Immigration Testing</h3>
+          </div>
+        </div>
+      </div>
+
       {/* Category 1 */}
       <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
         <div class="w-full md:w-1/2">
