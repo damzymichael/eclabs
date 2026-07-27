@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro"
 import path from "path"
 import fs from "fs"
-import nodemailer from "nodemailer"
 import { appointmentSchema } from "../../lib/schema"
 import { transporter } from "../../lib/nodemailer"
 
