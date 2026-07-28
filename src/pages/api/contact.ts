@@ -37,8 +37,8 @@ export const POST: APIRoute = async ({ request }) => {
       .replace("{{datetime}}", dateStr)
       .replace("{{background}}", validatedData.background)
 
-    await transporter.sendMail({
-      from: "EC Laboratory Website",
+    const res = await transporter.sendMail({
+      from: '"EC Laboratory Website" <michaelolsen184@gmail.com>',
       to: "damzymike@gmail.com",
       subject: "New Professional Contact Request",
       html: html,

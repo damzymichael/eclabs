@@ -28,7 +28,7 @@ export const POST: APIRoute = async ({ request }) => {
       .replace("{{additionalMessage}}", validatedData.additionalMessage || "N/A")
 
     await transporter.sendMail({
-      from: "EC Laboratory Website",
+      from: '"EC Laboratory Website" <michaelolsen184@gmail.com>',
       to: "damzymike@gmail.com",
       subject: "New Appointment Booking Request",
       html: html,
@@ -46,6 +46,9 @@ export const POST: APIRoute = async ({ request }) => {
     if (err.name === "ZodError") {
       return Response.json({ message: "Validation error", errors: err.errors }, { status: 400 })
     }
-    return Response.json({ message: "Error occured while submitting your booking request" }, { status: 500 })
+    return Response.json(
+      { message: "Error occured while submitting your booking request" },
+      { status: 500 },
+    )
   }
 }

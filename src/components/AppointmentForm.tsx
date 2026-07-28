@@ -50,44 +50,63 @@ export default function AppointmentForm() {
     }
   }
 
-  const inputClass = "w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01329C] focus:border-transparent transition"
+  const inputClass =
+    "w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01329C] focus:border-transparent transition"
   const labelClass = "block text-sm font-medium text-gray-700 mb-1"
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-6 md:px-12 lg:px-24">
       <div className="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-        <h2 className="text-2xl font-bold text-[#01329C] mb-6 border-b pb-4">Book an Appointment</h2>
-        
-        {submitMessage && (
-          <div className={`p-4 mb-6 rounded-md ${isError ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700'}`}>
-            {submitMessage}
-          </div>
-        )}
+        <h2 className="text-2xl font-bold text-[#01329C] mb-6 border-b pb-4">
+          Book an Appointment
+        </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className={labelClass}>Full Name</label>
-              <input type="text" {...register("name")} className={inputClass} placeholder="John Doe" />
+              <input
+                type="text"
+                {...register("name")}
+                className={inputClass}
+                placeholder="John Doe"
+              />
               {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
             </div>
-            
+
             <div>
               <label className={labelClass}>Email Address</label>
-              <input type="email" {...register("email")} className={inputClass} placeholder="john@example.com" />
+              <input
+                type="email"
+                {...register("email")}
+                className={inputClass}
+                placeholder="john@example.com"
+              />
               {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
             </div>
 
             <div>
               <label className={labelClass}>Phone Number</label>
-              <input type="tel" {...register("phone")} className={inputClass} placeholder="08012345678" />
+              <input
+                type="tel"
+                {...register("phone")}
+                className={inputClass}
+                placeholder="08012345678"
+              />
               {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>}
             </div>
 
             <div>
               <label className={labelClass}>Address</label>
-              <input type="text" {...register("address")} className={inputClass} placeholder="123 Main St" />
-              {errors.address && <p className="mt-1 text-sm text-red-600">{errors.address.message}</p>}
+              <input
+                type="text"
+                {...register("address")}
+                className={inputClass}
+                placeholder="123 Main St"
+              />
+              {errors.address && (
+                <p className="mt-1 text-sm text-red-600">{errors.address.message}</p>
+              )}
             </div>
 
             <div>
@@ -112,16 +131,27 @@ export default function AppointmentForm() {
               <select {...register("serviceCategory")} className={inputClass}>
                 <option value="">Select Category...</option>
                 {tabs.map((tab) => (
-                  <option key={tab.id} value={tab.label}>{tab.label}</option>
+                  <option key={tab.id} value={tab.label}>
+                    {tab.label}
+                  </option>
                 ))}
               </select>
-              {errors.serviceCategory && <p className="mt-1 text-sm text-red-600">{errors.serviceCategory.message}</p>}
+              {errors.serviceCategory && (
+                <p className="mt-1 text-sm text-red-600">{errors.serviceCategory.message}</p>
+              )}
             </div>
 
             <div>
               <label className={labelClass}>Name of Test</label>
-              <input type="text" {...register("testName")} className={inputClass} placeholder="e.g. Complete Blood Count" />
-              {errors.testName && <p className="mt-1 text-sm text-red-600">{errors.testName.message}</p>}
+              <input
+                type="text"
+                {...register("testName")}
+                className={inputClass}
+                placeholder="e.g. Complete Blood Count"
+              />
+              {errors.testName && (
+                <p className="mt-1 text-sm text-red-600">{errors.testName.message}</p>
+              )}
             </div>
 
             <div className="md:col-span-2">
@@ -132,24 +162,30 @@ export default function AppointmentForm() {
                 <option value="Office">Office Collection</option>
                 <option value="Lab">Visit Lab</option>
               </select>
-              {errors.collectionOption && <p className="mt-1 text-sm text-red-600">{errors.collectionOption.message}</p>}
+              {errors.collectionOption && (
+                <p className="mt-1 text-sm text-red-600">{errors.collectionOption.message}</p>
+              )}
             </div>
 
             <div className="md:col-span-2">
-              <label className={labelClass}>Additional Message or Clinical Information (Optional)</label>
-              <textarea 
-                {...register("additionalMessage")} 
-                className={`${inputClass} resize-none`} 
+              <label className={labelClass}>
+                Additional Message or Clinical Information (Optional)
+              </label>
+              <textarea
+                {...register("additionalMessage")}
+                className={`${inputClass} resize-none`}
                 rows={4}
                 placeholder="Any other details we should know about..."
               ></textarea>
-              {errors.additionalMessage && <p className="mt-1 text-sm text-red-600">{errors.additionalMessage.message}</p>}
+              {errors.additionalMessage && (
+                <p className="mt-1 text-sm text-red-600">{errors.additionalMessage.message}</p>
+              )}
             </div>
           </div>
 
           <div className="pt-4">
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={isSubmitting}
               className="w-full md:w-auto px-8 py-3 bg-[#01329C] text-white font-semibold rounded-md hover:bg-blue-800 transition disabled:opacity-70 disabled:cursor-not-allowed"
             >
@@ -157,6 +193,14 @@ export default function AppointmentForm() {
             </button>
           </div>
         </form>
+
+        {submitMessage && (
+          <div
+            className={`p-4 mb-6 rounded-md ${isError ? "bg-red-50 text-red-700" : "bg-green-50 text-green-700"} mt-4`}
+          >
+            {submitMessage}
+          </div>
+        )}
       </div>
     </div>
   )
