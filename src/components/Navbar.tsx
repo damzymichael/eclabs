@@ -127,10 +127,10 @@ function Navbar() {
     <div className="sticky top-0 z-50">
       <div className="">
         <aside className="bg-[#01329C] text-white text-sm sm:text-base px-4 py-2 flex items-center gap-5">
-          <a href="tel:+2347012345678">
+          <a href="tel:+2349033596255">
             <div className="flex gap-2 items-center">
               <FaPhoneAlt color="white" size={15} className="mt-0.5" />
-              <p className="font-semibold">+2347012345678</p>
+              <p className="font-semibold">+2349033596255</p>
             </div>
           </a>
 

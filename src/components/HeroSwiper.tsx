@@ -148,7 +148,7 @@ function HeroSwiper() {
               Access to global laboratory innovation and diagnostic
             </h1>
             <p className="mt-4 text-lg md:text-xl opacity-90 max-w-150 mb-13">
-              True sustainable patnerships and evidence based solutions, GLC helps build resilient
+              Through sustainable patnerships and evidence based solutions, GLC helps build resilient
               laboratory systems that proves patient outcome and public health
             </p>
 
