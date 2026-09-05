@@ -80,13 +80,21 @@ function OurServices() {
               </div>
             )}
 
-            {/* CTA Button */}
-            <a
-              href="/book-appointment"
-              className={`border-2 ${current.borderColor} ${current.textColor} px-8 py-3 rounded-full font-bold hover:${current.color} transition-all`}
-            >
-              {current.content.cta}
-            </a>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+              <a
+                href="/book-appointment"
+                className={`border-2 ${current.borderColor} ${current.textColor} px-8 py-3 rounded-full font-bold hover:${current.color} transition-all text-center`}
+              >
+                {current.content.cta}
+              </a>
+              <a
+                href="/ec_labs_full_test_menu.pdf"
+                className="bg-[#9B0100] text-white border-2 border-red-500 px-8 py-3 rounded-full font-bold hover:bg-[#7a0100] transition-all text-center"
+              >
+                Download test menu
+              </a>
+            </div>
           </div>
         </div>
       </div>

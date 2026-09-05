@@ -61,7 +61,7 @@ function HeroSwiper() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="#"
+                href="/book-appointment"
                 className="bg-white text-[#01329C] text-lg py-3 px-5 rounded-full hover:opacity-85 hover:scale-x-105 transition-all font-bold text-center"
               >
                 Request a quote
