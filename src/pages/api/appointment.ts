@@ -29,7 +29,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     await transporter.sendMail({
       from: '"EC Laboratory Website" <michaelolsen184@gmail.com>',
-      to: "damzymike@gmail.com",
+      to: "info@eclaboratory.com",
       subject: "New Appointment Booking Request",
       html: html,
     })
